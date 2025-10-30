@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
 
 const notoSansThai = Noto_Sans_Thai({
   variable: "--font-noto-sans-thai",
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body
         className={`${notoSansThai.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
