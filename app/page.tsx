@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, MessageCircleQuestion } from "lucide-react";
+import Menutab from "./Menutab";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         </div>
         <img src="https://vg-cnp.com/wp-content/uploads/2025/06/2025-M04-Leaflet-DL-Slat-TH_%E0%B9%84%E0%B8%9F%E0%B8%A5%E0%B9%8C%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95-01.jpg" alt="Product 1" className="absolute w-full h-screen object-cover brightness-65 z-10" />
       </section>
+      <Menutab />
       <section className="flex flex-col items-start justify-center min-w-full p-6">
         <span className="flex items-end justify-between w-full mb-8">
           <h1 className="text-start text-2xl text-amber-950 font-semibold">สินค้า</h1>
