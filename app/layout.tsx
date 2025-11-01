@@ -4,6 +4,7 @@ import "./globals.css";
 import NavbarDefault from "./components/NavbarDefault";
 import NavbarMain from "./components/NavbarMain";
 import ConditionalNavbar from "./components/ConditionNavbar";
+import Footer from "./components/Footer";
 
 const notoSansThai = Noto_Sans_Thai({
   variable: "--font-noto-sans-thai",
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <ConditionalNavbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

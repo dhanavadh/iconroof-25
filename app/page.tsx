@@ -1,13 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, MessageCircleQuestion } from "lucide-react";
-import Menutab from "./Menutab";
+import Menutab from "./components/Menutab";
 
 export default function Home() {
   return (
-    <div className="flex font-sans flex-col items-center justify-start min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+    <div className="flex font-sans flex-col items-center justify-start min-h-screen bg-[var(--background)] text-[var(--foreground)] max-w-7xl mx-auto">
       <section className="flex relative min-h-screen min-w-screen items-end">
-        <div className="flex flex-col z-20 p-6 text-white">
+        <div className="flex flex-col z-20 p-6 text-white md:max-w-7xl lg:mx-auto w-full lg:mb-4">
           <h1 className="text-start text-base">สินค้าใหม่</h1>
           <h1 className="text-start text-3xl font-semibold">ระแนงไวนิล วีจีเวนโต้</h1>
           <p className="my-2">บริการลูกค้าการนำเข้าธุรกิจค้าส่งมอบองค์กรการบรรลุเป้าหมายโทรบัญชีงบประมาณ</p>
@@ -18,26 +18,6 @@ export default function Home() {
         <img src="https://vg-cnp.com/wp-content/uploads/2025/06/2025-M04-Leaflet-DL-Slat-TH_%E0%B9%84%E0%B8%9F%E0%B8%A5%E0%B9%8C%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95-01.jpg" alt="Product 1" className="absolute w-full h-screen object-cover brightness-65 z-10" />
       </section>
       <Menutab />
-      <section className="flex flex-col items-start justify-center min-w-full p-6">
-        <span className="flex items-end justify-between w-full mb-8">
-          <h1 className="text-start text-2xl text-amber-950 font-semibold">สินค้า</h1>
-          <h1 className="text-start text-base text-neutral-500">ดูทั้งหมด</h1>
-        </span>        
-        <div className="flex gap-2">
-          <img src="https://vg-cnp.com/wp-content/uploads/2025/06/2025-M04-Leaflet-DL-Slat-TH_%E0%B9%84%E0%B8%9F%E0%B8%A5%E0%B9%8C%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95-01.jpg" alt="Product 1" className="mb-4 w-2/3 h-96 object-cover brightness-90 rounded-lg" />
-          <img src="https://vg-cnp.com/wp-content/uploads/2025/06/2025-M04-Leaflet-DL-Slat-TH_%E0%B9%84%E0%B8%9F%E0%B8%A5%E0%B9%8C%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95-04.jpg" alt="Product 1" className="mb-4 w-2/3 h-96 object-cover brightness-90 rounded-lg" />
-        </div>
-      </section>
-      <section className="flex flex-col items-start justify-center min-w-full p-6">
-        <span className="flex items-end justify-between w-full mb-8">
-          <h1 className="text-start text-2xl text-amber-950 font-semibold">ผลงาน</h1>
-          <h1 className="text-start text-base">ดูทั้งหมด</h1>
-        </span>        
-        <div className="flex gap-2">
-          <img src="https://vg-cnp.com/wp-content/uploads/2025/06/2025-M04-Leaflet-DL-Slat-TH_%E0%B9%84%E0%B8%9F%E0%B8%A5%E0%B9%8C%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95-01.jpg" alt="Product 1" className="mb-4 w-2/3 h-96 object-cover brightness-90 rounded-lg" />
-          <img src="https://vg-cnp.com/wp-content/uploads/2025/06/2025-M04-Leaflet-DL-Slat-TH_%E0%B9%84%E0%B8%9F%E0%B8%A5%E0%B9%8C%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95-04.jpg" alt="Product 1" className="mb-4 w-2/3 h-96 object-cover brightness-90 rounded-lg" />
-        </div>
-      </section>
       <section className="flex flex-col items-start justify-center min-w-full p-6">        
         <span className="flex items-end justify-between w-full mb-8">
           <h1 className="text-start text-2xl text-amber-950 font-semibold">บทความ</h1>
