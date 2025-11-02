@@ -23,7 +23,7 @@ const NavbarMain = () => {
 
   return (
     <div
-      className={`fixed top-0 z-50 w-full font-sans transition-colors duration-300 ${scrolled ? "bg-[#fffcfa]" : ""}`}
+      className={`fixed top-0 z-50 w-full font-sans transition-colors duration-300 ${scrolled ? "bg-neutral-50" : ""}`}
     >
       <section className="flex items-center justify-between max-w-7xl mx-auto py-2 px-4 h-18">
         <img

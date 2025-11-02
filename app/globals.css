@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fffcfa;
+  --background: #fafafa;
   --foreground: #171717;
 }
 
@@ -14,6 +14,15 @@
 
 @utility no-scrollbar {
   @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
+@keyframes bounce-x {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-8px);
+  }
 }
 
 @media (prefers-color-scheme: dark) {

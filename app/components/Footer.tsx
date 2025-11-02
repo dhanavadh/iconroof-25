@@ -4,7 +4,7 @@ import { ArrowUpRight, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
-    <div className="flex md:flex-row items-start justify-between flex-col font-sans px-6 max-w-7xl mx-auto py-12 gap-6">
+    <div className="flex lg:flex-row items-start justify-between flex-col font-sans px-6 max-w-7xl mx-auto py-24 gap-6">
       <section>
         <p className="font-medium text-md mb-1 text-neutral-700">ไอคอนรูฟ</p>
         <p className="text-sm w-5/6 text-neutral-500">
@@ -13,7 +13,7 @@ const Footer = () => {
         </p>
         <p className="text-sm w-5/6 text-neutral-500">089-154-3355</p>
       </section>
-      <div className="flex flex-col md:flex-row items-start gap-6">
+      <div className="flex flex-col lg:flex-row items-start gap-6">
         <section className="flex flex-col gap-2">
           <p className="">สินค้า</p>
           <div className="flex flex-col gap-1.5">
@@ -32,19 +32,13 @@ const Footer = () => {
           </div>
         </section>
         <section className="flex flex-col gap-2">
-          <p className="">สินค้า</p>
+          <p className="">บริการ</p>
           <div className="flex flex-col gap-1.5">
             <Link href="/" className="text-neutral-500 text-sm">
-              ระแนงไวนิล Amigo
+              ช่างทำระแนง
             </Link>
             <Link href="/" className="text-neutral-500 text-sm">
-              ระแนง SCG Box Set
-            </Link>
-            <Link href="/" className="text-neutral-500 text-sm">
-              ระแนงไวนิล VG รุ่น Vento
-            </Link>
-            <Link href="/" className="text-neutral-500 text-sm">
-              ชิ้นส่วนระแนง
+              ปรึกษาเกี่ยวกับระแนง
             </Link>
           </div>
         </section>
