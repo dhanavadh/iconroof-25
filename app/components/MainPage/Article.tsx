@@ -37,7 +37,7 @@ const LatestArticlePage = () => {
   }
 
   return (
-    <div className='w-full py-12 px-6 max-w-7xl mx-auto'>
+    <div className='w-full py-8 md:py-16 px-6 md:px-8 max-w-7xl mx-auto'>
         <div className='flex flex-col items-center justify-center gap-6'>
             <span
                 className="flex items-start justify-between w-full"

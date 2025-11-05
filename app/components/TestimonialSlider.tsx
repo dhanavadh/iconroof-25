@@ -76,7 +76,7 @@ export default function TestimonialSlider() {
   };
 
   return (
-    <section className="w-full py-12 px-6 max-w-7xl mx-auto">
+    <section className="w-full py-8 md:py-16 px-6 md:px-8 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left Column - Header & Controls */}
         <div className="flex flex-col justify-between h-full md:col-span-1">

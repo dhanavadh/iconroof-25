@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const BrandListPage = () => {
   return (    
-    <div className='w-full py-12 px-6 max-w-7xl mx-auto'>
+    <div className='w-full py-8 md:py-16 px-6 md:px-8 max-w-7xl mx-auto'>
         <div className='flex flex-col items-center justify-center gap-6'>
             <div className='text-center'>
                 <h1 className='text-3xl font-bold mb-4'>เลือกดูตามแบรนด์</h1>                
