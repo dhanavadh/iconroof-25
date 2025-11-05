@@ -1,0 +1,10 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://iconroof.co.th/sitemap.xml
