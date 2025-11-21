@@ -1,15 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
-import {
-  ChevronDown,
-  MessageCircleQuestion,
-  ArrowUpRight,
-  Pointer,
-} from "lucide-react";
+import { ChevronDown, MessageCircleQuestion } from "lucide-react";
 import Menutab from "./components/Menutab";
 import TestimonialSlider from "./components/TestimonialSlider";
-import Navbar from "./components/Navbar";
-import ContactInfoPage from "./components/MainPage/Contact";
 import BrandListPage from "./components/MainPage/Brand";
 import ProductInfoPage from "./components/MainPage/ProductInfo";
 import LatestArticlePage from "./components/MainPage/Article";
@@ -87,7 +79,7 @@ export default function Home() {
         <TestimonialSlider />
 
         <LatestArticlePage />
-
+        <BannerInfoPage />
         <section className="flex flex-col items-start justify-center mt-4 min-w-full py-2 px-4">
           <MessageCircleQuestion className="h-12 w-12 mb-4 text-[#d9300c]" />
           <h1 className="text-start text-3xl text-[#d9300c] font-semibold">
@@ -106,8 +98,6 @@ export default function Home() {
           </div>
         </section>
       </div>
-
-      <BannerInfoPage />
     </>
   );
 }

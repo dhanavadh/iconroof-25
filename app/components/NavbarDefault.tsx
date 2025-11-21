@@ -14,7 +14,9 @@ const NavbarDefault = () => {
   return (
     <div className="sticky top-0 z-50 font-sans bg-neutral-50">
       <section className="flex items-center justify-between max-w-7xl mx-auto py-2 px-4 h-18">
-        <img src="/icr-n-o.svg" alt="Logo" className="h-8" />
+        <Link href="/">
+          <img src="/icr-n-o.svg" alt="Logo" className="h-8" />
+        </Link>
         <div className="sm:flex hidden gap-6 text-neutral-500">
           <Link
             href="/"
@@ -62,9 +64,13 @@ const NavbarDefault = () => {
             <ArrowUpRight className="inline-block ml-1 h-4 w-4" />
           </Link>
         </div>
-        <p className="flex items-center bg-white border border-neutral-100 py-1 px-3 text-neutral-700 rounded-full text-sm font-semibold shadow-sm">
+        <Link
+          href="https://lin.ee/8BsKFek"
+          target="_blank"
+          className="flex items-center bg-white border border-neutral-100 py-1 px-3 text-neutral-700 rounded-full text-sm font-semibold shadow-sm"
+        >
           ซื้อสินค้า
-        </p>
+        </Link>
       </section>
       <Menutab />
     </div>

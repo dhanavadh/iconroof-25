@@ -62,15 +62,19 @@ const Footer = () => {
         <section className="flex flex-col gap-2">
           <p className="">ช่องทางการติดต่อ</p>
           <div className="flex flex-col gap-1.5">
-            <Link href="+" className="text-neutral-500 text-sm">
+            <Link href="+" target="_blank" className="text-neutral-500 text-sm">
               โทร. 089-154-3355
               <ArrowUpRight className="inline-block ml-1 h-4 w-4" />
             </Link>
-            <Link href="/" className="text-neutral-500 text-sm">
+            <Link
+              href="https://lin.ee/8BsKFek"
+              target="_blank"
+              className="text-neutral-500 text-sm"
+            >
               Line @PLK2013
               <ArrowUpRight className="inline-block ml-1 h-4 w-4" />
             </Link>
-            <Link href="/" className="text-neutral-500 text-sm">
+            <Link href="/" target="_blank" className="text-neutral-500 text-sm">
               Facebook แผ่นหลังคาการช่าง
               <ArrowUpRight className="inline-block ml-1 h-4 w-4" />
             </Link>

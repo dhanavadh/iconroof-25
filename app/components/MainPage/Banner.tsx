@@ -13,7 +13,7 @@ const BannerInfoPage = () => {
             <p>กรุณากรอกข้อมูลให้ครบถ้วน</p>
           </div>
           <Link
-            href="#"
+            href="https://lin.ee/8BsKFek"
             className="bg-white text-black px-4 py-2 rounded-full w-fit"
           >
             ติดต่อผ่านไลน์
