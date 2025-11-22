@@ -17,11 +17,15 @@ export default function Home() {
     description:
       "จำหน่ายและติดตั้งระแนงบังตาไวนิล AMIGO ระแนงชิด ระแนงเว้นร่อง ระแนงบานเกล็ด",
     url: "https://iconroof.co.th/",
-    telephone: "+66-XX-XXX-XXXX",
+    telephone: "+66-89-154-3355",
     address: {
       "@type": "PostalAddress",
+      streetAddress:
+        "หมู่บ้าน คนึงทิพย์ (โกดัง) ถนน บางกรวย-ไทรน้อย กาญจนาภิเษก ตำบล บางบัวทอง",
+      addressLocality: "อำเภอบางบัวทอง",
+      addressRegion: "นนทบุรี",
+      postalCode: "11110",
       addressCountry: "TH",
-      addressLocality: "Thailand",
     },
     image:
       "https://tvss01.iconroof.co.th/e6c6f6e8-e73e-40b1-9f05-5436e5f99137/asset/og-img.jpg",
