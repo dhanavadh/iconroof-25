@@ -26,7 +26,7 @@ const NavbarMain = () => {
       <nav
         className={`fixed top-0 z-50 w-full font-sans transition-colors duration-300 ${scrolled ? "bg-neutral-50" : ""}`}
       >
-        <section className="flex items-center justify-between max-w-7xl mx-auto py-2 px-4 h-18">
+        <section className="flex items-center justify-between max-w-7xl mx-auto py-2 px-4 h-[72px]">
           <Link href="/">
             <img
               src={scrolled ? "/icr-n-o.svg" : "/icr-n-w.svg"}
@@ -36,47 +36,44 @@ const NavbarMain = () => {
           </Link>
 
           <div
-            className={`sm:flex gap-6 transition-colors hidden ${scrolled ? "text-neutral-500" : "text-neutral-200"}`}
+            className={`md:flex gap-6 transition-colors hidden ${scrolled ? "text-neutral-500" : "text-neutral-200"}`}
           >
             <Link
               href="/"
-              className={`flex-shrink-0 transition-colors ${
-                isActive("/")
-                  ? scrolled
-                    ? "text-neutral-950 font-medium"
-                    : "text-neutral-50 font-medium"
-                  : scrolled
-                    ? "hover:text-neutral-700"
-                    : "hover:text-neutral-100"
-              }`}
+              className={`flex-shrink-0 transition-colors ${isActive("/")
+                ? scrolled
+                  ? "text-neutral-950 font-medium"
+                  : "text-neutral-50 font-medium"
+                : scrolled
+                  ? "hover:text-neutral-700"
+                  : "hover:text-neutral-100"
+                }`}
             >
               หน้าแรก
             </Link>
             <Link
               href="/test"
-              className={`flex-shrink-0 transition-colors ${
-                isActive("/test")
-                  ? scrolled
-                    ? "text-neutral-950 font-medium"
-                    : "text-neutral-50 font-medium"
-                  : scrolled
-                    ? "hover:text-neutral-700"
-                    : "hover:text-neutral-100"
-              }`}
+              className={`flex-shrink-0 transition-colors ${isActive("/test")
+                ? scrolled
+                  ? "text-neutral-950 font-medium"
+                  : "text-neutral-50 font-medium"
+                : scrolled
+                  ? "hover:text-neutral-700"
+                  : "hover:text-neutral-100"
+                }`}
             >
               สินค้า
             </Link>
             <Link
               href="/preview"
-              className={`flex-shrink-0 transition-colors ${
-                isActive("/preview")
-                  ? scrolled
-                    ? "text-neutral-950 font-medium"
-                    : "text-neutral-50 font-medium"
-                  : scrolled
-                    ? "hover:text-neutral-700"
-                    : "hover:text-neutral-100"
-              }`}
+              className={`flex-shrink-0 transition-colors ${isActive("/preview")
+                ? scrolled
+                  ? "text-neutral-950 font-medium"
+                  : "text-neutral-50 font-medium"
+                : scrolled
+                  ? "hover:text-neutral-700"
+                  : "hover:text-neutral-100"
+                }`}
             >
               ผลงาน
             </Link>
@@ -100,7 +97,7 @@ const NavbarMain = () => {
           <Link
             href="https://lin.ee/8BsKFek"
             target="_blank"
-            className="flex items-center bg-white border border-neutral-100 py-1 px-3 text-neutral-700 rounded-full text-sm font-semibold shadow-sm"
+            className="flex items-center bg-white border whitespace-nowrap shrink-0 border-neutral-100 py-1 px-3 text-neutral-700 rounded-full text-sm font-semibold shadow-sm"
           >
             ซื้อสินค้า
           </Link>

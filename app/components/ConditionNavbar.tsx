@@ -6,7 +6,7 @@ import NavbarMain from './NavbarMain'
 
 export default function ConditionalNavbar() {
   const pathname = usePathname()
-  
+
   // Use NavbarMain for home page ('/'), NavbarDefault for all other pages
   return pathname === '/' ? <NavbarMain /> : <NavbarDefault />
 }

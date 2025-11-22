@@ -76,7 +76,7 @@ export default function TestimonialSlider() {
   };
 
   return (
-    <section className="w-full py-8 md:py-16 px-6 md:px-8 max-w-7xl mx-auto">
+    <section className="w-full py-8 md:py-16 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left Column - Header & Controls */}
         <div className="flex flex-col justify-between h-full md:col-span-1">
@@ -94,11 +94,10 @@ export default function TestimonialSlider() {
             <button
               onClick={() => scroll('left')}
               disabled={!canScrollLeft}
-              className={`w-12 h-12 rounded-full border-2 flex items-center justify-center transition-all ${
-                !canScrollLeft
+              className={`w-12 h-12 rounded-full border-2 flex items-center justify-center transition-all ${!canScrollLeft
                   ? 'border-gray-300 text-gray-300 cursor-not-allowed'
                   : 'border-gray-800 text-gray-800 hover:bg-gray-100'
-              }`}
+                }`}
               aria-label="Previous testimonial"
             >
               <ArrowLeft className="w-5 h-5" />
@@ -106,11 +105,10 @@ export default function TestimonialSlider() {
             <button
               onClick={() => scroll('right')}
               disabled={!canScrollRight}
-              className={`w-12 h-12 rounded-full border-2 flex items-center justify-center transition-all ${
-                !canScrollRight
+              className={`w-12 h-12 rounded-full border-2 flex items-center justify-center transition-all ${!canScrollRight
                   ? 'border-gray-300 text-gray-300 cursor-not-allowed'
                   : 'border-gray-800 text-gray-800 hover:bg-gray-100'
-              }`}
+                }`}
               aria-label="Next slide"
             >
               <ArrowRight className="w-5 h-5" />

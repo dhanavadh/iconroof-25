@@ -6,8 +6,18 @@ import BrandListPage from "./components/MainPage/Brand";
 import ProductInfoPage from "./components/MainPage/ProductInfo";
 import LatestArticlePage from "./components/MainPage/Article";
 import BannerInfoPage from "./components/MainPage/Banner";
+import InformationComp from "./components/InformationComp";
 
 export default function Home() {
+  const slide = [
+    {
+      id: 1,
+      title: "Slide 1",
+      description: "Description for slide 1",
+      image:
+        "https://iconroof.co.th/_next/image?url=%2Fasset%2Fblog%2Fblog-3.png&w=3840&q=75",
+    },
+  ];
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -70,17 +80,23 @@ export default function Home() {
             className="absolute w-full h-screen object-cover brightness-65 z-10"
           />
         </section>
-        <Menutab />
 
-        <ProductInfoPage />
+        <div className="w-full px-6 md:px-8 flex flex-col">
+          <Menutab />
 
-        <BrandListPage />
+          <ProductInfoPage />
 
-        <TestimonialSlider />
+          <BrandListPage />
 
-        <LatestArticlePage />
-        <BannerInfoPage />
-        <section className="flex flex-col items-start justify-center mt-4 min-w-full py-2 px-4">
+          <TestimonialSlider />
+
+          <LatestArticlePage />
+          <BannerInfoPage />
+
+          <InformationComp />
+        </div>
+
+        <section className="flex flex-col items-start justify-center mt-4 min-w-full py-2 px-6 md:px-8">
           <MessageCircleQuestion className="h-12 w-12 mb-4 text-[#d9300c]" />
           <h1 className="text-start text-3xl text-[#d9300c] font-semibold">
             ติดต่อปรึกษาฟรี!

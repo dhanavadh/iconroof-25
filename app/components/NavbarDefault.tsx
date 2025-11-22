@@ -13,38 +13,35 @@ const NavbarDefault = () => {
 
   return (
     <div className="sticky top-0 z-50 font-sans bg-neutral-50">
-      <section className="flex items-center justify-between max-w-7xl mx-auto py-2 px-4 h-18">
+      <section className="flex items-center justify-between max-w-7xl mx-auto py-2 px-4 h-[72px]">
         <Link href="/">
           <img src="/icr-n-o.svg" alt="Logo" className="h-8" />
         </Link>
-        <div className="sm:flex hidden gap-6 text-neutral-500">
+        <div className="md:flex hidden gap-6 text-neutral-500">
           <Link
             href="/"
-            className={`flex-shrink-0 transition-colors ${
-              isActive("/")
-                ? "text-neutral-700 font-medium"
-                : "hover:text-neutral-700"
-            }`}
+            className={`flex-shrink-0 transition-colors ${isActive("/")
+              ? "text-neutral-700 font-medium"
+              : "hover:text-neutral-700"
+              }`}
           >
             หน้าแรก
           </Link>
           <Link
             href="/test"
-            className={`flex-shrink-0 transition-colors ${
-              pathname === "/test"
-                ? "text-neutral-700 font-medium"
-                : "hover:text-neutral-700"
-            }`}
+            className={`flex-shrink-0 transition-colors ${pathname === "/test"
+              ? "text-neutral-700 font-medium"
+              : "hover:text-neutral-700"
+              }`}
           >
             สินค้า
           </Link>
           <Link
             href="/preview"
-            className={`flex-shrink-0 transition-colors ${
-              pathname === "/no"
-                ? "text-neutral-700 font-medium"
-                : "hover:text-neutral-700"
-            }`}
+            className={`flex-shrink-0 transition-colors ${pathname === "/no"
+              ? "text-neutral-700 font-medium"
+              : "hover:text-neutral-700"
+              }`}
           >
             ผลงาน
           </Link>
@@ -67,7 +64,7 @@ const NavbarDefault = () => {
         <Link
           href="https://lin.ee/8BsKFek"
           target="_blank"
-          className="flex items-center bg-white border border-neutral-100 py-1 px-3 text-neutral-700 rounded-full text-sm font-semibold shadow-sm"
+          className="flex whitespace-nowrap shrink-0 items-center bg-white border border-neutral-100 py-1 px-3 text-neutral-700 rounded-full text-sm font-semibold shadow-sm"
         >
           ซื้อสินค้า
         </Link>

@@ -13,39 +13,36 @@ const Menutab = () => {
   };
 
   return (
-    <div className="sticky top-[72px] z-40 w-full sm:hidden bg-neutral-50">
+    <div className="sticky top-[72px] z-40 w-full md:hidden bg-neutral-50">
       <div className="relative max-w-7xl mx-auto">
         <section
-          className="flex font-medium items-center gap-6 px-6 h-12 bg-neutral-50 border-y border-neutral-200 overflow-x-auto no-scrollbar text-neutral-500"
+          className="flex font-medium items-center gap-6 h-12 bg-neutral-50 border-y border-neutral-200 overflow-x-auto no-scrollbar text-neutral-500 px-4"
           id="menu-tab"
         >
           <Link
             href="/"
-            className={`flex-shrink-0 transition-colors ${
-              isActive("/")
-                ? "text-neutral-700 font-medium"
-                : "hover:text-neutral-700"
-            }`}
+            className={`flex-shrink-0 transition-colors ${isActive("/")
+              ? "text-neutral-700 font-medium"
+              : "hover:text-neutral-700"
+              }`}
           >
             หน้าแรก
           </Link>
           <Link
             href="/test"
-            className={`flex-shrink-0 transition-colors ${
-              pathname === "/test"
-                ? "text-neutral-700 font-medium"
-                : "hover:text-neutral-700"
-            }`}
+            className={`flex-shrink-0 transition-colors ${pathname === "/test"
+              ? "text-neutral-700 font-medium"
+              : "hover:text-neutral-700"
+              }`}
           >
             สินค้า
           </Link>
           <Link
             href="/preview"
-            className={`flex-shrink-0 transition-colors ${
-              pathname === "/no"
-                ? "text-neutral-700 font-medium"
-                : "hover:text-neutral-700"
-            }`}
+            className={`flex-shrink-0 transition-colors ${pathname === "/no"
+              ? "text-neutral-700 font-medium"
+              : "hover:text-neutral-700"
+              }`}
           >
             ผลงานติดตั้ง
           </Link>
