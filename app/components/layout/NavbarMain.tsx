@@ -27,7 +27,7 @@ const NavbarMain = () => {
       <nav
         className={`fixed top-0 z-50 w-full font-sans transition-colors duration-300 ${scrolled ? "bg-neutral-50" : ""}`}
       >
-        <section className="flex items-center justify-between max-w-7xl mx-auto py-2 px-4 h-[72px]">
+        <section className="container-nav">
           <Link href="/">
             <Image
               src={scrolled ? "/icr-n-o.svg" : "/icr-n-w.svg"}
@@ -55,8 +55,8 @@ const NavbarMain = () => {
               หน้าแรก
             </Link>
             <Link
-              href="/products"
-              className={`flex-shrink-0 transition-colors ${isActive("/products")
+              href="/test"
+              className={`flex-shrink-0 transition-colors ${isActive("/test")
                 ? scrolled
                   ? "text-neutral-950 font-medium"
                   : "text-neutral-50 font-medium"

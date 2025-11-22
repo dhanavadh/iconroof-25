@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
-import NavbarDefault from "./components/NavbarDefault";
-import NavbarMain from "./components/NavbarMain";
 import ConditionalNavbar from "./components/ConditionNavbar";
 import Footer from "./components/Footer";
 

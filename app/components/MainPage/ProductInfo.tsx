@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const ProductInfoPage = () => {
   return (
@@ -32,11 +33,12 @@ const ProductInfoPage = () => {
 
           {/* Image Section */}
           <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px]">
-            <img
+            <Image
               alt="Product showcase"
               src="/product/test-1.jpg"
-              loading="lazy"
-              className="w-full h-full object-cover rounded-sm"
+              className="object-cover rounded-sm"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         </div>

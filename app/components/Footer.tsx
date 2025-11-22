@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { ArrowUpRight, Facebook } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const Footer = () => {
   return (

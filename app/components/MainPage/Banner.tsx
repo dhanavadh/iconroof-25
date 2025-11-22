@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const BannerInfoPage = () => {
   return (
@@ -19,10 +20,12 @@ const BannerInfoPage = () => {
             ติดต่อผ่านไลน์
           </Link>
         </div>
-        <img
-          src="https://iconroof.co.th/_next/image?url=%2Fasset%2Famigo.png&w=3840&q=75"
+        <Image
+          src="/1101.webp"
           alt="Product 1"
-          className="absolute w-full h-full object-cover brightness-65 z-10 rounded-xl"
+          className="absolute object-cover brightness-65 z-10 rounded-xl"
+          fill
+          sizes="100vw"
         />
       </section>
     </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, MessageCircleQuestion } from "lucide-react";
 import Menutab from "./components/Menutab";
@@ -9,15 +10,6 @@ import BannerInfoPage from "./components/MainPage/Banner";
 import InformationComp from "./components/InformationComp";
 
 export default function Home() {
-  const slide = [
-    {
-      id: 1,
-      title: "Slide 1",
-      description: "Description for slide 1",
-      image:
-        "https://iconroof.co.th/_next/image?url=%2Fasset%2Fblog%2Fblog-3.png&w=3840&q=75",
-    },
-  ];
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -74,10 +66,12 @@ export default function Home() {
               ดูรายละเอียด
             </Link>
           </div>
-          <img
-            src="https://vg-cnp.com/wp-content/uploads/2025/06/2025-M04-Leaflet-DL-Slat-TH_%E0%B9%84%E0%B8%9F%E0%B8%A5%E0%B9%8C%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95-01.jpg"
+          <Image
+            src="/product/1111.webp"
             alt="Product 1"
-            className="absolute w-full h-screen object-cover brightness-65 z-10"
+            className="absolute object-cover brightness-65 z-10"
+            fill
+            sizes="100vw"
           />
         </section>
 

@@ -1,7 +1,10 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect, useRef } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
+
+
 
 interface Slide {
   category: string;
@@ -15,31 +18,31 @@ const slides: Slide[] = [
     category: "สินค้าใหม่",
     title: "ระแนงไวนิล วีจีเวนโต้",
     description: "บริการลูกค้าการนำเข้าธุรกิจค้าส่งมอบองค์กรการบรรลุเป้าหมายโทรบัญชีงบประมาณ",
-    image: "https://iconroof.co.th/_next/image?url=https%3A%2F%2Ftvss01.iconroof.co.th%2Fe6c6f6e8-e73e-40b1-9f05-5436e5f99137%2Fasset%2Fpreview-amigo-1.jpg&w=3840&q=75"
+    image: "/1101.webp"
   },
   {
     category: "สินค้าแนะนำ",
     title: "ระแนงไวนิล อมิโก้",
     description: "คุณภาพระดับพรีเมียม ทนทาน ติดตั้งง่าย เหมาะสำหรับทุกโครงการ",
-    image: "https://iconroof.co.th/_next/image?url=https%3A%2F%2Ftvss01.iconroof.co.th%2Fe6c6f6e8-e73e-40b1-9f05-5436e5f99137%2FAmigo-1%2FAmigo-132.webp&w=1080&q=75"
+    image: "/1103.webp"
   },
   {
     category: "ยอดนิยม",
     title: "ระแนงไวนิล เชอร่า",
     description: "ดีไซน์สวยงาม เหมาะกับบ้านสไตล์โมเดิร์น ราคาคุ้มค่า",
-    image: "https://vg-cnp.com/wp-content/uploads/2025/06/2025-M04-Leaflet-DL-Slat-TH_%E0%B9%84%E0%B8%9F%E0%B8%A5%E0%B9%8C%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95-01.jpg"
+    image: "/1102.webp"
   },
   {
     category: "สินค้าพิเศษ",
     title: "ระแนงไวนิล พรีเมียม",
     description: "วัสดุคุณภาพสูง เกรดพรีเมียม สำหรับโครงการพิเศษ",
-    image: "https://iconroof.co.th/_next/image?url=https%3A%2F%2Ftvss01.iconroof.co.th%2Fe6c6f6e8-e73e-40b1-9f05-5436e5f99137%2Fasset%2Famigo-1.png&w=3840&q=75"
+    image: "/1101.webp"
   },
   {
     category: "โปรโมชั่น",
     title: "ระแนงไวนิล ราคาพิเศษ",
     description: "โปรโมชั่นพิเศษ ลดราคาสูงสุด พร้อมบริการติดตั้ง",
-    image: "https://iconroof.co.th/_next/image?url=%2Fasset%2Fblog%2Fblog-3.png&w=3840&q=75"
+    image: "/1103.webp"
   }
 ];
 
@@ -95,8 +98,8 @@ export default function TestimonialSlider() {
               onClick={() => scroll('left')}
               disabled={!canScrollLeft}
               className={`w-12 h-12 rounded-full border-2 flex items-center justify-center transition-all ${!canScrollLeft
-                  ? 'border-gray-300 text-gray-300 cursor-not-allowed'
-                  : 'border-gray-800 text-gray-800 hover:bg-gray-100'
+                ? 'border-gray-300 text-gray-300 cursor-not-allowed'
+                : 'border-gray-800 text-gray-800 hover:bg-gray-100'
                 }`}
               aria-label="Previous testimonial"
             >
@@ -106,8 +109,8 @@ export default function TestimonialSlider() {
               onClick={() => scroll('right')}
               disabled={!canScrollRight}
               className={`w-12 h-12 rounded-full border-2 flex items-center justify-center transition-all ${!canScrollRight
-                  ? 'border-gray-300 text-gray-300 cursor-not-allowed'
-                  : 'border-gray-800 text-gray-800 hover:bg-gray-100'
+                ? 'border-gray-300 text-gray-300 cursor-not-allowed'
+                : 'border-gray-800 text-gray-800 hover:bg-gray-100'
                 }`}
               aria-label="Next slide"
             >
@@ -137,10 +140,12 @@ export default function TestimonialSlider() {
                       {slide.description}
                     </p>
                   </div>
-                  <img
+                  <Image
                     src={slide.image}
                     alt={slide.title}
-                    className="absolute w-full h-full object-cover brightness-60"
+                    className="absolute object-cover brightness-60"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
               </div>
@@ -150,4 +155,6 @@ export default function TestimonialSlider() {
       </div>
     </section>
   );
-}
+};
+
+

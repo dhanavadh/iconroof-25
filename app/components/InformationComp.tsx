@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { X } from "lucide-react";
 
 interface NewsCardProps {
@@ -13,9 +14,9 @@ interface NewsCardProps {
     onClick?: () => void;
 }
 
-const NewsCard = ({ className, category, title, description, image, href, onClick }: NewsCardProps) => {
+const NewsCard = ({ className, category, title, description, image, onClick }: NewsCardProps) => {
     const [isExpanded, setIsExpanded] = useState(false);
-    const timeoutRef = useRef<any>(null);
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
     const handleMouseEnter = () => {
         if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -52,14 +53,12 @@ const NewsCard = ({ className, category, title, description, image, href, onClic
                 </div>
             </div>
             <div className="absolute inset-0 z-10 bg-gradient-to-t from-neutral-900/90 to-transparent group-hover:from-black group-hover:via-black/60 group-hover:to-transparent transition-all duration-300"></div>
-            <img
+            <Image
                 src={image}
                 alt={title}
                 className="absolute h-full w-full object-cover"
-                loading="lazy"
-                decoding="async"
-                width="4000"
-                height="2250"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
         </div>
     );
@@ -85,7 +84,7 @@ export default function InformationComp() {
             category: "Amigo",
             title: "สึนามิเหมยมั้ยนิววิทย์",
             description: "ลีเมอร์อันตรกิริยาหมายปองเพลย์บอยสไตล์ คันยิ มาร์เก็ตติ้งสโตร์แชมปิยองอุปทาน สึนามิเหมยมั้ยนิววิทย์",
-            image: "https://www.dooform.com/placeholder/1102.webp",
+            image: "/1102.webp",
             href: "/articles/amigo-launching-soon"
         },
         {
@@ -93,7 +92,7 @@ export default function InformationComp() {
             category: "Amigo",
             title: "มาร์เก็ตติ้งสโตร์แชมปิยองอุปทาน",
             description: "ลีเมอร์อันตรกิริยาหมายปองเพลย์บอยสไตล์ คันยิ มาร์เก็ตติ้งสโตร์แชมปิยองอุปทาน สึนามิเหมยมั้ยนิววิทย์",
-            image: "https://www.dooform.com/placeholder/1101.webp",
+            image: "/1101.webp",
             href: "/articles/amigo-launching-soon"
         },
         {
@@ -101,7 +100,7 @@ export default function InformationComp() {
             category: "Amigo",
             title: "ลีเมอร์อันตร",
             description: "ลีเมอร์อันตรกิริยาหมายปองเพลย์บอยสไตล์ คันยิ มาร์เก็ตติ้งสโตร์แชมปิยองอุปทาน สึนามิเหมยมั้ยนิววิทย์",
-            image: "https://www.dooform.com/placeholder/1103.webp",
+            image: "/1103.webp",
             href: "/articles/amigo-launching-soon"
         },
         {
@@ -109,7 +108,7 @@ export default function InformationComp() {
             category: "Amigo",
             title: "กิริยาหมายปอง",
             description: "ลีเมอร์อันตรกิริยาหมายปองเพลย์บอยสไตล์ คันยิ มาร์เก็ตติ้งสโตร์แชมปิยองอุปทาน สึนามิเหมยมั้ยนิววิทย์",
-            image: "https://www.dooform.com/placeholder/1102.webp",
+            image: "/1102.webp",
             href: "/articles/amigo-launching-soon"
         }
     ];
@@ -155,10 +154,12 @@ export default function InformationComp() {
                             <X className="w-5 h-5" />
                         </button>
                         <div className="h-64 md:h-80 lg:h-auto relative w-full lg:w-1/2 shrink-0">
-                            <img
+                            <Image
                                 src={selectedNews.image}
                                 alt={selectedNews.title}
                                 className="absolute h-full w-full object-cover"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                             <div className="absolute bottom-0 left-0 p-6 text-white">

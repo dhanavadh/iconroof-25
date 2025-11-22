@@ -1,11 +1,11 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import Menutab from "../Menutab";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 
-const Menutab = () => {
+const NavbarDefault = () => {
   const pathname = usePathname();
 
   const isActive = (path: string) => {
@@ -13,12 +13,12 @@ const Menutab = () => {
   };
 
   return (
-    <div className="sticky top-[72px] z-40 w-full md:hidden bg-neutral-50">
-      <div className="relative max-w-7xl mx-auto">
-        <section
-          className="flex font-medium items-center gap-6 h-12 bg-neutral-50 border-y border-neutral-200 overflow-x-auto no-scrollbar text-neutral-500 px-4"
-          id="menu-tab"
-        >
+    <div className="sticky top-0 z-50 font-sans bg-neutral-50">
+      <section className="container-nav">
+        <Link href="/">
+          <Image src="/icr-n-o.svg" alt="Logo" width={100} height={32} className="h-8 w-auto" />
+        </Link>
+        <div className="md:flex hidden gap-6 text-neutral-500">
           <Link
             href="/"
             className={`flex-shrink-0 transition-colors ${isActive("/")
@@ -29,8 +29,8 @@ const Menutab = () => {
             หน้าแรก
           </Link>
           <Link
-            href="/products"
-            className={`flex-shrink-0 transition-colors ${pathname === "/products"
+            href="/test"
+            className={`flex-shrink-0 transition-colors ${pathname === "/test"
               ? "text-neutral-700 font-medium"
               : "hover:text-neutral-700"
               }`}
@@ -44,7 +44,7 @@ const Menutab = () => {
               : "hover:text-neutral-700"
               }`}
           >
-            ผลงานติดตั้ง
+            ผลงาน
           </Link>
           <Link
             href="/"
@@ -61,12 +61,18 @@ const Menutab = () => {
             แผ่นหลังคา
             <ArrowUpRight className="inline-block ml-1 h-4 w-4" />
           </Link>
-        </section>
-
-        <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-neutral-50 to-transparent pointer-events-none"></div>
-      </div>
+        </div>
+        <Link
+          href="https://lin.ee/8BsKFek"
+          target="_blank"
+          className="flex whitespace-nowrap shrink-0 items-center bg-white border border-neutral-100 py-1 px-3 text-neutral-700 rounded-full text-sm font-semibold shadow-sm"
+        >
+          ซื้อสินค้า
+        </Link>
+      </section>
+      <Menutab />
     </div>
   );
 };
 
-export default Menutab;
+export default NavbarDefault;
