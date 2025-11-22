@@ -3,6 +3,7 @@ import { Geist_Mono, Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
 import ConditionalNavbar from "./components/ConditionNavbar";
 import Footer from "./components/Footer";
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 
 const notoSansThai = Noto_Sans_Thai({
   variable: "--font-noto-sans-thai",
@@ -106,6 +107,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="th" className="overscroll-none">
+      <GoogleAnalytics gaId="G-M74LW8G72T" />
+      <GoogleTagManager gtmId="GTM-TKH6XPJN" />
       <body
         className={`${notoSansThai.variable} ${geistMono.variable} antialiased`}
       >
