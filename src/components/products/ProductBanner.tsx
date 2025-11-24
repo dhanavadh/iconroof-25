@@ -4,11 +4,12 @@ import { Banner } from '@/lib/types';
 
 interface ProductBannerProps {
   banner: Banner;
+  fullScreen?: boolean;
 }
 
-export default function ProductBanner({ banner }: ProductBannerProps) {
+export default function ProductBanner({ banner, fullScreen }: ProductBannerProps) {
     return (
-        <section className="flex relative h-full min-w-screen items-end -mt-16 md:-mt-20 font-sans">
+        <section className={`flex relative ${fullScreen ? 'min-h-screen' : 'h-full'} min-w-screen items-end -mt-16 md:-mt-20 font-sans`}>
             <div className="flex flex-col z-20 p-6 text-white md:max-w-7xl lg:mx-auto w-full lg:mb-4 pt-96">
                 <h1 className="text-start text-base">{banner.subtitle}</h1>
                 <h2 className="text-start text-3xl font-semibold">

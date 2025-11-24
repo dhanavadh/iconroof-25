@@ -41,6 +41,14 @@ const mockProducts: Product[] = [
 
 const mockBanners: Banner[] = [
   {
+    id: 'home-hero-banner',
+    title: 'ระแนงไวนิล วีจีเวนโต้',
+    subtitle: 'สินค้าใหม่',
+    description: 'บริการลูกค้าการนำเข้าธุรกิจค้าส่งมอบองค์กรการบรรลุเป้าหมายโทรบัญชีงบประมาณ',
+    imageUrl: '/product/1111.webp',
+    linkUrl: '#'
+  },
+  {
     id: 'amigo',
     title: 'safassa',
     subtitle: 'BrandX - Category1',
@@ -64,7 +72,7 @@ const mockBanners: Banner[] = [
     imageUrl: 'https://via.placeholder.com/400?text=ProductC',
     linkUrl: '/products/scg'
   },
-  {
+   {
     id: '1114',
     title: 'Product D Feature',
     subtitle: 'BrandZ - Category3',
@@ -73,7 +81,6 @@ const mockBanners: Banner[] = [
     linkUrl: '/products/1114'
   },
 ];
-
 const mockBrands: Brand[] = [
   {
     id: 'amigo',
