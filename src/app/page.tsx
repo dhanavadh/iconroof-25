@@ -13,6 +13,9 @@ import BrandListSkeleton from "@/components/loaders/BrandListSkeleton";
 import BannerInfoSkeleton from "@/components/loaders/BannerInfoSkeleton";
 import ProductBannerContainer from "@/components/products/ProductBannerContainer";
 import ProductBannerSkeleton from "@/components/loaders/ProductBannerSkeleton";
+import { getMockBrands } from "@/app/products/mock-data";
+import ContactFAQ from "@/components/home/ContactFAQ";
+import ContactFAQSkeleton from "@/components/loaders/ContactFAQSkeleton";
 
 export default function Home() {
   const structuredData = {
@@ -34,7 +37,7 @@ export default function Home() {
     },
     image:
       "https://tvss01.iconroof.co.th/e6c6f6e8-e73e-40b1-9f05-5436e5f99137/asset/og-img.jpg",
-    priceRange: "$$",
+    priceRange: "$",
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -68,7 +71,7 @@ export default function Home() {
 
           <ProductInfoPage />
 
-          <Suspense fallback={<BrandListSkeleton />}>
+          <Suspense fallback={<BrandListSkeleton count={getMockBrands().length} />}>
             <BrandListPage />
           </Suspense>
 
@@ -78,6 +81,10 @@ export default function Home() {
           
           <Suspense fallback={<BannerInfoSkeleton />}>
             <BannerInfoPage />
+          </Suspense>
+
+          <Suspense fallback={<ContactFAQSkeleton />}>
+            <ContactFAQ />
           </Suspense>
 
           <InformationComp />
@@ -104,3 +111,4 @@ export default function Home() {
     </>
   );
 }
+

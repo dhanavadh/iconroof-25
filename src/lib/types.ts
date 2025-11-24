@@ -34,3 +34,9 @@ export interface BannerInfo {
   linkText: string;
 }
 
+export interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+}
+

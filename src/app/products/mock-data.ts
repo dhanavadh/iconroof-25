@@ -1,4 +1,4 @@
-import { Product, Banner, Brand, BannerInfo } from '@/lib/types';
+import { Product, Banner, Brand, BannerInfo, FAQItem } from '@/lib/types';
 
 const mockProducts: Product[] = [
   {
@@ -72,7 +72,7 @@ const mockBanners: Banner[] = [
     imageUrl: 'https://via.placeholder.com/400?text=ProductC',
     linkUrl: '/products/scg'
   },
-   {
+  {
     id: '1114',
     title: 'Product D Feature',
     subtitle: 'BrandZ - Category3',
@@ -81,6 +81,7 @@ const mockBanners: Banner[] = [
     linkUrl: '/products/1114'
   },
 ];
+
 const mockBrands: Brand[] = [
   {
     id: 'amigo',
@@ -100,6 +101,12 @@ const mockBrands: Brand[] = [
     imageUrl: '/brand/scg_home.jpg',
     linkUrl: '/brands/scg_home'
   },
+  {
+    id: 'component',
+    name: 'ชิ้นส่วนระแนง',
+    imageUrl: '/brand/components.svg',
+    linkUrl: '/brands/components'
+  },
 ];
 
 const mockBannerInfos: BannerInfo[] = [
@@ -110,6 +117,24 @@ const mockBannerInfos: BannerInfo[] = [
     imageUrl: '/1101.webp',
     linkUrl: 'https://lin.ee/8BsKFek',
     linkText: 'ติดต่อผ่านไลน์'
+  }
+];
+
+const mockFAQItems: FAQItem[] = [
+  {
+    id: 'faq1',
+    question: 'หากสนใจสั่งซื้อสินค้าต้องทำอย่างไร',
+    answer: 'คุณสามารถติดต่อทีมงานของเราผ่านช่องทางไลน์ หรือโทรศัพท์ เพื่อสอบถามข้อมูลเพิ่มเติมและทำการสั่งซื้อได้เลยค่ะ'
+  },
+  {
+    id: 'faq2',
+    question: 'มีบริการติดตั้งหรือไม่',
+    answer: 'เรามีทีมงานผู้เชี่ยวชาญพร้อมให้บริการติดตั้งสินค้าทุกประเภท เพื่อความสะดวกและรวดเร็วของลูกค้าค่ะ'
+  },
+  {
+    id: 'faq3',
+    question: 'สินค้ารับประกันกี่ปี',
+    answer: 'สินค้าของเรามีการรับประกันคุณภาพนาน 10 ปี เพื่อความมั่นใจในการใช้งานของลูกค้าค่ะ'
   }
 ];
 
@@ -151,4 +176,9 @@ export function getMockBannerInfo(): BannerInfo {
 export async function getMockBannerInfoAsync(): Promise<BannerInfo> {
   await new Promise(resolve => setTimeout(resolve, 2000));
   return mockBannerInfos[0];
+}
+
+export async function getMockFAQItemsAsync(): Promise<FAQItem[]> {
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  return mockFAQItems;
 }
