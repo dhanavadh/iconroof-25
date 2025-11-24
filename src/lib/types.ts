@@ -8,3 +8,12 @@ export interface Product {
   category: string;
   // Add more fields as needed
 }
+
+export interface Banner {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  imageUrl: string;
+  linkUrl: string;
+}

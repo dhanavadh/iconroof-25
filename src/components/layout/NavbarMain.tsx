@@ -56,7 +56,7 @@ const NavbarMain = () => {
             </Link>
             <Link
               href="/products"
-              className={`flex-shrink-0 transition-colors ${isActive("/products")
+              className={`flex-shrink-0 transition-colors ${isActive("/products") || pathname?.startsWith("/products/")
                 ? scrolled
                   ? "text-neutral-950 font-medium"
                   : "text-neutral-50 font-medium"

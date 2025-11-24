@@ -13,7 +13,7 @@ const Menutab = () => {
   };
 
   return (
-    <div className="sticky top-[72px] z-40 w-full md:hidden bg-neutral-50">
+    <div className="sticky top-[72px] z-40 w-full md:hidden bg-neutral-50 font-sans">
       <div className="relative max-w-7xl mx-auto">
         <section
           className="flex font-medium items-center gap-6 h-12 bg-neutral-50 border-y border-neutral-200 overflow-x-auto no-scrollbar text-neutral-500 px-4"
@@ -30,7 +30,7 @@ const Menutab = () => {
           </Link>
           <Link
             href="/products"
-            className={`flex-shrink-0 transition-colors ${pathname === "/products"
+            className={`flex-shrink-0 transition-colors ${pathname === "/products" || pathname?.startsWith("/products/")
               ? "text-neutral-700 font-medium"
               : "hover:text-neutral-700"
               }`}
