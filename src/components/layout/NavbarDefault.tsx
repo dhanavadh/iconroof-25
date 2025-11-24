@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Menutab from "../Menutab";
+import Menutab from "@/components/home/Menutab";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 
@@ -14,7 +14,7 @@ const NavbarDefault = () => {
 
   return (
     <div className="sticky top-0 z-50 font-sans bg-neutral-50">
-      <section className="container-nav">
+      <section className="flex items-center justify-between max-w-7xl mx-auto py-2 px-4 h-[72px]">
         <Link href="/">
           <Image src="/icr-n-o.svg" alt="Logo" width={100} height={32} className="h-8 w-auto" />
         </Link>
@@ -29,8 +29,8 @@ const NavbarDefault = () => {
             หน้าแรก
           </Link>
           <Link
-            href="/test"
-            className={`flex-shrink-0 transition-colors ${pathname === "/test"
+            href="/products"
+            className={`flex-shrink-0 transition-colors ${pathname === "/products"
               ? "text-neutral-700 font-medium"
               : "hover:text-neutral-700"
               }`}

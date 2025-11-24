@@ -1,0 +1,65 @@
+import type { Metadata } from "next";
+import { Geist_Mono, Noto_Sans_Thai } from "next/font/google";
+import "./globals.css";
+import ConditionalNavbar from "@/components/layout/ConditionNavbar";
+import Footer from "@/components/layout/Footer";
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
+
+const notoSansThai = Noto_Sans_Thai({
+  variable: "--font-noto-sans-thai",
+  subsets: ["thai", "latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
+  title: "จำหน่ายอุปกรณ์ระแนงไวนิล | ไม้ระแนงเฌอร่า-ระแนงไม้เทียม – Iconroof",
+  description:
+    "ไอคอนรูฟ จำหน่ายและติดตั้งระแนงบังตาไวนิล AMIGO ระแนงชิด ระแนงเว้นร่อง ระแนงบานเกล็ด โดยไอคอนรูฟ ขายปลีก-ส่ง ราคาโรงงาน ทันสมัย แข็งแรง สวยงาม ระแนงบังตาไวนิล รับประกัน 10 ปี อบสีด้วย พาวเดอร์ โค้ท ตั้งแต่ 08.00-17.30 น. เปิดบริการวันจันทร์-เสาร์ บริการ: รับติดตั้งระแนงไวนิล, เปิดบริการ จันทร์-ศุกร์, ตั้งแต่ 08.00-17.30 น.",
+  openGraph: {
+    title: "ไอคอนรูฟ จำหน่ายอุปกรณ์ระแนงไวนิล | ไม้ระแนงเฌอร่า-ระแนงไม้เทียม – Iconroof",
+    description:
+      "ไอคอนรูฟ บริการจำหน่ายและติดตั้งระแนงบังตาไวนิล AMIGO ระแนงชิด ระแนงเว้นร่อง ระแนงบานเกล็ด โดยไอคอนรูฟ ขายปลีก-ส่ง ราคาโรงงาน ทันสมัย แข็งแรง สวยงาม ระแนงบังตาไวนิล รับประกัน 10 ปี อบสีด้วย พาวเดอร์ โค้ท ตั้งแต่ 08.00-17.30 น. เปิดบริการวันจันทร์-เสาร์ บริการ: รับติดตั้งระแนงไวนิล, เปิดบริการ จันทร์-ศุกร์, ตั้งแต่ 08.00-17.30 น.",
+    url: "https://beta.iconroof.co.th/",
+    siteName: "Iconroof",
+    images: [
+      {
+        url: "https://tvss01.iconroof.co.th/e6c6f6e8-e73e-40b1-9f05-5436e5f99137/asset/og-img.jpg",
+        width: 1200,
+        height: 630,
+        alt: "iconroof ระแนง",
+      },
+    ],
+    locale: "th_TH",
+    type: "website",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="th" className="overscroll-none">
+
+      <GoogleAnalytics gaId="G-M74LW8G72T" />
+      <GoogleTagManager gtmId="GTM-TKH6XPJN" />
+      <body
+        className={`${notoSansThai.variable} ${geistMono.variable} antialiased`}
+      >
+        <ConditionalNavbar />
+        {/*<NavbarMain />*/}
+        {children}
+        <Footer />
+      </body>
+    </html>
+  );
+}

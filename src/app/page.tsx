@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, MessageCircleQuestion } from "lucide-react";
-import Menutab from "./components/Menutab";
-import TestimonialSlider from "./components/TestimonialSlider";
-import BrandListPage from "./components/MainPage/Brand";
-import ProductInfoPage from "./components/MainPage/ProductInfo";
-import LatestArticlePage from "./components/MainPage/Article";
-import BannerInfoPage from "./components/MainPage/Banner";
-import InformationComp from "./components/InformationComp";
+import Menutab from "@/components/home/Menutab";
+import TestimonialSlider from "@/components/home/TestimonialSlider";
+import BrandListPage from "@/components/home/Brand";
+import ProductInfoPage from "@/components/home/ProductInfo";
+import LatestArticlePage from "@/components/home/Article";
+import BannerInfoPage from "@/components/home/Banner";
+import InformationComp from "@/components/home/InformationComp";
 
 export default function Home() {
   const structuredData = {
