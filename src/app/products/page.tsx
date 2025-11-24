@@ -11,7 +11,6 @@ import { NewsArticle } from "@/lib/types";
 const ProductPage = async () => {
     // Fetch all products
     const products = await getAllMockProductsAsync();
-    const firstProduct = products[0];
 
     const productNews: NewsArticle[] = products.map(product => ({
         id: product.id,
@@ -26,7 +25,7 @@ const ProductPage = async () => {
     return (
         <>
             <Suspense fallback={<ProductBannerSkeleton />}>
-                {firstProduct && <ProductBannerContainer id={firstProduct.id} />}
+                <ProductBannerContainer id="products-main-banner" />
             </Suspense>
             <Menutab />
             <div className="font-sans flex flex-col max-w-7xl mx-auto p-6 gap-6">
@@ -37,9 +36,9 @@ const ProductPage = async () => {
                     </h2>
                 </div>
                 <NewsGrid news={productNews} disablePopup={true} />
-
+                
                 <div className="mt-8">
-                    <span
+                     <span
                         className="flex items-start justify-between w-full mb-6"
                         id="product"
                     >
@@ -52,10 +51,11 @@ const ProductPage = async () => {
                         <h1 className="text-start text-base text-neutral-500">ดูทั้งหมด</h1>
                     </span>
                 </div>
-
+               
             </div>
         </>
     );
 };
 
 export default ProductPage;
+

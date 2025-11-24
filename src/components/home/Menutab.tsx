@@ -30,10 +30,10 @@ const Menutab = () => {
   };
 
   return (
-    <div className="sticky top-[72px] z-40 w-full md:hidden bg-neutral-50 font-sans px-6 md:px-8">
+    <div className="sticky top-[72px] z-40 w-full md:hidden bg-neutral-50 border-y border-neutral-200 font-sans px-6 md:px-8">
       <div className="relative max-w-7xl mx-auto">
         <section
-          className="flex font-medium items-center gap-6 h-12 bg-neutral-50 border-y border-neutral-200 overflow-x-auto no-scrollbar text-neutral-500 px-4"
+          className="flex font-medium items-center gap-6 h-12 overflow-x-auto no-scrollbar text-neutral-500"
           id="menu-tab"
         >
           {menuItems.map((item) => (
@@ -43,8 +43,8 @@ const Menutab = () => {
               target={item.external ? "_blank" : undefined}
               rel={item.external ? "noopener noreferrer" : undefined}
               className={`flex-shrink-0 transition-colors ${!item.external && isActive(item.href)
-                  ? "text-neutral-700 font-medium"
-                  : "hover:text-neutral-700"
+                ? "text-neutral-700 font-medium"
+                : "hover:text-neutral-700"
                 }`}
             >
               {item.label}

@@ -113,9 +113,15 @@ export default function NewsGrid({ news, disablePopup }: NewsGridProps) {
         <>
             <div className="grid grid-cols-1 md:grid-cols-none md:grid-flow-col md:grid-rows-4 gap-4 w-full">
                 {news.map((item, index) => {
-                    // Use provided className or fallback to default layout pattern
-                    const finalClassName = item.className || DEFAULT_LAYOUT_CLASSES[index % DEFAULT_LAYOUT_CLASSES.length];
-                    
+                    let defaultClass = DEFAULT_LAYOUT_CLASSES[index % DEFAULT_LAYOUT_CLASSES.length];
+
+                    // Special case for 3 items: make the last item span 2 columns to fill the grid
+                    if (news.length === 3 && index === 2) {
+                        defaultClass = "md:col-span-2 md:row-span-2 h-64";
+                    }
+
+                    const finalClassName = item.className || defaultClass;
+
                     return (
                         <NewsCard
                             key={item.id}
@@ -136,7 +142,7 @@ export default function NewsGrid({ news, disablePopup }: NewsGridProps) {
                     onClick={closePopup}
                 >
                     <div
-                        className={`bg-white rounded-xl overflow-hidden max-w-3xl lg:max-w-5xl w-full shadow-2xl relative transition-all duration-300 transform max-h-[90vh] flex flex-col lg:flex-row ${isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
+                        className={`bg-white rounded-xl overflow-hidden max-w-3xl lg:max-w-7xl w-full shadow-2xl relative transition-all duration-300 transform max-h-[90vh] lg:h-[85vh] flex flex-col lg:flex-row ${isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
                         onClick={(e) => e.stopPropagation()}
                     >
                         <button
@@ -174,7 +180,7 @@ export default function NewsGrid({ news, disablePopup }: NewsGridProps) {
                                     href={selectedNews.linkUrl}
                                     className="flex items-center bg-neutral-900 hover:bg-neutral-700 border border-neutral-700 py-1 px-3 text-neutral-100 rounded-full text-sm font-semibold shadow-sm"
                                 >
-                                    อ่านเพิ่มเติม
+                                    ดูเพิ่มเติม
                                 </Link>
                             </div>
                         </div>

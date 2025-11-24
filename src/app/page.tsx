@@ -17,6 +17,7 @@ import { getMockBrands } from "@/app/products/mock-data";
 import ContactFAQ from "@/components/home/ContactFAQ";
 import ContactFAQSkeleton from "@/components/loaders/ContactFAQSkeleton";
 import InformationCompSkeleton from "@/components/loaders/InformationCompSkeleton";
+import CustomerReview from "@/components/home/CustomerReview";
 
 export default function Home() {
   const structuredData = {
@@ -90,6 +91,8 @@ export default function Home() {
           <Suspense fallback={<ContactFAQSkeleton />}>
             <ContactFAQ />
           </Suspense>
+
+          <CustomerReview />
 
           <Suspense fallback={<BannerInfoSkeleton />}>
             <BannerInfoPage />

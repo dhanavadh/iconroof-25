@@ -1,4 +1,4 @@
-import { getMockProduct } from '@/app/products/mock-data';
+import { getMockProductAsync } from '@/app/products/mock-data';
 import Image from 'next/image';
 import Menutab from '@/components/home/Menutab';
 import { Suspense } from 'react';
@@ -11,7 +11,7 @@ type ProductPageProps = {
 
 export default async function ProductPageById({ params }: ProductPageProps) {
   const { id } = await params;
-  const product = getMockProduct(id);
+  const product = await getMockProductAsync(id); // Use async version here for consistency with Suspense
 
   if (!product) {
     return (
@@ -25,7 +25,7 @@ export default async function ProductPageById({ params }: ProductPageProps) {
   return (
     <>
       <Suspense fallback={<ProductBannerSkeleton />}>
-        <ProductBannerContainer id={id} />
+        <ProductBannerContainer product={product} />
       </Suspense>
       <Menutab />
       <main className="flex font-sans flex-col items-center justify-start min-h-screen bg-[var(--background)] text-[var(--foreground)] max-w-7xl mx-auto pt-16 md:pt-20">

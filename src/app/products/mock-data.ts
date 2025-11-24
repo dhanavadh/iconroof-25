@@ -3,39 +3,30 @@ import { Product, Banner, Brand, BannerInfo, FAQItem, NewsArticle } from '@/lib/
 const mockProducts: Product[] = [
   {
     id: 'amigo',
-    name: 'Product A',
+    name: 'Amigo',
     description: 'This is a detailed description of Product A. It has many features and is very useful.',
     price: 199.99,
-    imageUrl: '/product/1111.webp',
-    brand: 'BrandX',
-    category: 'Category1',
+    imageUrl: '/product/1121.webp',
+    brand: 'amigo',
+    category: 'ระแนงไวนิล',
   },
   {
     id: 'vg-vento',
-    name: 'สร้างความเป็นส่วนตัวให้กับบ้าน',
-    description: 'บริการลูกค้าการนำเข้าธุรกิจค้าส่งมอบองค์กรการบรรลุเป้าหมายโทรบัญชีงบประมาณ',
+    name: 'VG Vento',
+    description: 'ออกแบบเพื่อสภาพอากาศของประเทศไทยโดยเฉพาะ',
     price: 299.50,
-    imageUrl: '/product/vg-img-1.webp',
-    brand: 'ระแนงไวนิล Amigo',
-    category: 'ตกแต่งบ้าน',
+    imageUrl: '/product/test-1.jpg',
+    brand: 'vg-vento',
+    category: 'ระแนงไวนิล',
   },
   {
     id: 'scg',
-    name: 'Product C',
-    description: 'Product C offers great value and performance. A must-have for enthusiasts.',
+    name: 'ระแนง SCG Box Set',
+    description: 'สร้างสรรค์ความงามได้หลากหลาย ภายใต้คุณภาพที่เป็นมาตรฐาน',
     price: 99.00,
-    imageUrl: '/product/vg-img-1.webp',
+    imageUrl: '/product/1123.webp',
     brand: 'BrandX',
-    category: 'Category1',
-  },
-  {
-    id: '1114',
-    name: 'Product D',
-    description: 'Discover the amazing features of Product D. Designed for efficiency and durability.',
-    price: 450.75,
-    imageUrl: '/product/vg-img-1.webp',
-    brand: 'BrandZ',
-    category: 'Category3',
+    category: 'ระแนง',
   },
 ];
 
@@ -46,6 +37,14 @@ const mockBanners: Banner[] = [
     subtitle: 'สินค้าใหม่',
     description: 'บริการลูกค้าการนำเข้าธุรกิจค้าส่งมอบองค์กรการบรรลุเป้าหมายโทรบัญชีงบประมาณ',
     imageUrl: '/product/1111.webp',
+    linkUrl: '#'
+  },
+  {
+    id: 'products-main-banner',
+    title: 'สร้างความเป็นส่วนตัวให้กับบ้าน',
+    subtitle: 'ระแนงไวนิล Amigo',
+    description: 'บริการลูกค้าการนำเข้าธุรกิจค้าส่งมอบองค์กรการบรรลุเป้าหมายโทรบัญชีงบประมาณ',
+    imageUrl: '/product/1112.webp',
     linkUrl: '#'
   },
   {
@@ -77,7 +76,7 @@ const mockBanners: Banner[] = [
     title: 'Product D Feature',
     subtitle: 'BrandZ - Category3',
     description: 'Top of the line durability.',
-    imageUrl: 'https://via.placeholder.com/400?text=ProductD',
+    imageUrl: '/product/1114.webp',
     linkUrl: '/products/1114'
   },
 ];
@@ -90,10 +89,10 @@ const mockBrands: Brand[] = [
     linkUrl: '/products/amigo'
   },
   {
-    id: 'vg_cnp',
-    name: 'VG CNP',
+    id: 'vg-vento',
+    name: 'VG Vento',
     imageUrl: '/brand/vg_cnp.jpg',
-    linkUrl: '/products/vg_cnp'
+    linkUrl: '/products/vg-vento'
   },
   {
     id: 'scg_home',
@@ -192,17 +191,17 @@ const mockNewsArticles: NewsArticle[] = [
   {
     id: 'news1',
     className: "md:row-span-4 h-64 md:h-full",
-    category: "Amigo",
-    title: "สึนามิเหมยมั้ยนิววิทย์",
-    description: "ลีเมอร์อันตรกิริยาหมายปองเพลย์บอยสไตล์ คันยิ มาร์เก็ตติ้งสโตร์แชมปิยองอุปทาน สึนามิเหมยมั้ยนิววิทย์",
-    content: "กฤษณ์โดนัท ลีเมอร์อันตรกิริยาหมายปองเพลย์บอยสไตล์ คันยิ มาร์เก็ตติ้งสโตร์แชมปิยองอุปทาน สึนามิเหมยมั้ยนิววิทย์ สะกอมปักขคณนาแพทเทิร์นดีมานด์บ๊อกซ์ เยนหม่านโถวโรลออนแพทเทิร์นเลดี้ ห่วยเทวาเป่ายิ้งฉุบหล่อฮังก้วยหลินจือ แฟร์เลดี้รีเสิร์ช คอร์รัปชั่น ฮัลโลวีนมายาคติไฮบริด คอนเซ็ปต์ทัวร์หลวงปู่ กาญจนาภิเษกกฤษณ์โดนัท คอปเตอร์ไนน์ แจ๊กพ็อตโกลด์สตาร์ท ไวกิ้งดีพาร์ทเมนท์พรีเมียร์...",
-    imageUrl: "/1102.webp",
+    category: "โปรโมชั่น",
+    title: "ติดตั้งระแนงไวนิลเหลือ 1,750 บาท/ตร.ม.*",
+    description: "ติดตั้งระแนงไวนิลเว้นร่อง ตั้งแต่วันนี้ – 30 มิ.ย. 2568 จาก 1,900 ลดเหลือ 1,750 บาท/ตร.ม. *เงื่อนไขเป็นไปตามบริษัทกำหนด",
+    content: "ติดตั้งระแนงไวนิลเว้นร่อง ตั้งแต่วันนี้ – 30 มิ.ย. 2568 จาก 1,900 ลดเหลือ 1,750 บาท/ตร.ม. *เงื่อนไขเป็นไปตามบริษัทกำหนด",
+    imageUrl: "/1104.svg",
     linkUrl: "/articles/amigo-launching-soon"
   },
   {
     id: 'news2',
     className: "md:col-span-2 md:row-span-2 h-64",
-    category: "Amigo",
+    category: "บทความ",
     title: "มาร์เก็ตติ้งสโตร์แชมปิยองอุปทาน",
     description: "ลีเมอร์อันตรกิริยาหมายปองเพลย์บอยสไตล์ คันยิ มาร์เก็ตติ้งสโตร์แชมปิยองอุปทาน สึนามิเหมยมั้ยนิววิทย์",
     content: "Full content for news 2...",
