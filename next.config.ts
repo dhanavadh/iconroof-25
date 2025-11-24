@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  assetPrefix: 'https://beta.iconroof.co.th',
   images: {
     remotePatterns: [
       {
