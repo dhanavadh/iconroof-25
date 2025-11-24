@@ -16,6 +16,7 @@ import ProductBannerSkeleton from "@/components/loaders/ProductBannerSkeleton";
 import { getMockBrands } from "@/app/products/mock-data";
 import ContactFAQ from "@/components/home/ContactFAQ";
 import ContactFAQSkeleton from "@/components/loaders/ContactFAQSkeleton";
+import InformationCompSkeleton from "@/components/loaders/InformationCompSkeleton";
 
 export default function Home() {
   const structuredData = {
@@ -82,9 +83,13 @@ export default function Home() {
 
 
 
-          <InformationComp />
+          <Suspense fallback={<InformationCompSkeleton />}>
+            <InformationComp />
+          </Suspense>
 
-          <ContactFAQ />
+          <Suspense fallback={<ContactFAQSkeleton />}>
+            <ContactFAQ />
+          </Suspense>
 
           <Suspense fallback={<BannerInfoSkeleton />}>
             <BannerInfoPage />

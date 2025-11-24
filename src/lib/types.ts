@@ -40,3 +40,14 @@ export interface FAQItem {
   answer: string;
 }
 
+export interface NewsArticle {
+  id: string;
+  category: string;
+  title: string;
+  description: string;
+  content: string;
+  imageUrl: string;
+  linkUrl: string;
+  className?: string; // Optional for layout variations
+}
+

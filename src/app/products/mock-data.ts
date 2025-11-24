@@ -24,7 +24,7 @@ const mockProducts: Product[] = [
     name: 'Product C',
     description: 'Product C offers great value and performance. A must-have for enthusiasts.',
     price: 99.00,
-    imageUrl: 'https://via.placeholder.com/400?text=ProductC',
+    imageUrl: '/product/vg-img-1.webp',
     brand: 'BrandX',
     category: 'Category1',
   },
@@ -33,7 +33,7 @@ const mockProducts: Product[] = [
     name: 'Product D',
     description: 'Discover the amazing features of Product D. Designed for efficiency and durability.',
     price: 450.75,
-    imageUrl: 'https://via.placeholder.com/400?text=ProductD',
+    imageUrl: '/product/vg-img-1.webp',
     brand: 'BrandZ',
     category: 'Category3',
   },
@@ -87,25 +87,25 @@ const mockBrands: Brand[] = [
     id: 'amigo',
     name: 'Amigo',
     imageUrl: '/brand/amigo.jpg',
-    linkUrl: '/brands/amigo'
+    linkUrl: '/products/amigo'
   },
   {
     id: 'vg_cnp',
     name: 'VG CNP',
     imageUrl: '/brand/vg_cnp.jpg',
-    linkUrl: '/brands/vg_cnp'
+    linkUrl: '/products/vg_cnp'
   },
   {
     id: 'scg_home',
     name: 'SCG Home',
     imageUrl: '/brand/scg_home.jpg',
-    linkUrl: '/brands/scg_home'
+    linkUrl: '/products/scg_home'
   },
   {
     id: 'component',
     name: 'ชิ้นส่วนระแนง',
     imageUrl: '/brand/components.svg',
-    linkUrl: '/brands/components'
+    linkUrl: '/products/components'
   },
 ];
 
@@ -151,6 +151,11 @@ export function getAllMockProducts(): Product[] {
   return mockProducts;
 }
 
+export async function getAllMockProductsAsync(): Promise<Product[]> {
+  await new Promise(resolve => setTimeout(resolve, 1500));
+  return mockProducts;
+}
+
 export function getMockBanner(id: string): Banner | undefined {
   return mockBanners.find(banner => banner.id === id);
 }
@@ -182,3 +187,52 @@ export async function getMockFAQItemsAsync(): Promise<FAQItem[]> {
   await new Promise(resolve => setTimeout(resolve, 1000));
   return mockFAQItems;
 }
+
+const mockNewsArticles: NewsArticle[] = [
+  {
+    id: 'news1',
+    className: "md:row-span-4 h-64 md:h-full",
+    category: "Amigo",
+    title: "สึนามิเหมยมั้ยนิววิทย์",
+    description: "ลีเมอร์อันตรกิริยาหมายปองเพลย์บอยสไตล์ คันยิ มาร์เก็ตติ้งสโตร์แชมปิยองอุปทาน สึนามิเหมยมั้ยนิววิทย์",
+    content: "กฤษณ์โดนัท ลีเมอร์อันตรกิริยาหมายปองเพลย์บอยสไตล์ คันยิ มาร์เก็ตติ้งสโตร์แชมปิยองอุปทาน สึนามิเหมยมั้ยนิววิทย์ สะกอมปักขคณนาแพทเทิร์นดีมานด์บ๊อกซ์ เยนหม่านโถวโรลออนแพทเทิร์นเลดี้ ห่วยเทวาเป่ายิ้งฉุบหล่อฮังก้วยหลินจือ แฟร์เลดี้รีเสิร์ช คอร์รัปชั่น ฮัลโลวีนมายาคติไฮบริด คอนเซ็ปต์ทัวร์หลวงปู่ กาญจนาภิเษกกฤษณ์โดนัท คอปเตอร์ไนน์ แจ๊กพ็อตโกลด์สตาร์ท ไวกิ้งดีพาร์ทเมนท์พรีเมียร์...",
+    imageUrl: "/1102.webp",
+    linkUrl: "/articles/amigo-launching-soon"
+  },
+  {
+    id: 'news2',
+    className: "md:col-span-2 md:row-span-2 h-64",
+    category: "Amigo",
+    title: "มาร์เก็ตติ้งสโตร์แชมปิยองอุปทาน",
+    description: "ลีเมอร์อันตรกิริยาหมายปองเพลย์บอยสไตล์ คันยิ มาร์เก็ตติ้งสโตร์แชมปิยองอุปทาน สึนามิเหมยมั้ยนิววิทย์",
+    content: "Full content for news 2...",
+    imageUrl: "/1101.webp",
+    linkUrl: "/articles/amigo-launching-soon"
+  },
+  {
+    id: 'news3',
+    className: "md:col-span-1 md:row-span-2 h-64 md:h-full",
+    category: "Amigo",
+    title: "ลีเมอร์อันตร",
+    description: "ลีเมอร์อันตรกิริยาหมายปองเพลย์บอยสไตล์ คันยิ มาร์เก็ตติ้งสโตร์แชมปิยองอุปทาน สึนามิเหมยมั้ยนิววิทย์",
+    content: "Full content for news 3...",
+    imageUrl: "/1103.webp",
+    linkUrl: "/articles/amigo-launching-soon"
+  },
+  {
+    id: 'news4',
+    className: "md:col-span-1 md:row-span-2 h-64 md:h-full",
+    category: "Amigo",
+    title: "กิริยาหมายปอง",
+    description: "ลีเมอร์อันตรกิริยาหมายปองเพลย์บอยสไตล์ คันยิ มาร์เก็ตติ้งสโตร์แชมปิยองอุปทาน สึนามิเหมยมั้ยนิววิทย์",
+    content: "Full content for news 4...",
+    imageUrl: "/1102.webp",
+    linkUrl: "/articles/amigo-launching-soon"
+  }
+];
+
+export async function getMockNewsArticlesAsync(): Promise<NewsArticle[]> {
+  await new Promise(resolve => setTimeout(resolve, 1500));
+  return mockNewsArticles;
+}
+
