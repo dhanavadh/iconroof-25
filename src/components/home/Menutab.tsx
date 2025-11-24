@@ -15,6 +15,7 @@ const menuItems: MenuItem[] = [
   { label: "หน้าแรก", href: "/" },
   { label: "สินค้า", href: "/products" },
   { label: "ผลงานติดตั้ง", href: "/preview" },
+  { label: "บทความ", href: "/blogs" },
   { label: "ช่างทำระแนง", href: "#" }, // Adjusted to '#' as per original, or update if needed
   { label: "แผ่นหลังคา", href: "https://www.xn--42cf7cl0c9a5bk1kzc.com/", external: true },
 ];

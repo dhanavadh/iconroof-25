@@ -81,6 +81,19 @@ const NavbarMain = () => {
               ผลงาน
             </Link>
             <Link
+              href="/blogs"
+              className={`flex-shrink-0 transition-colors ${isActive("/blogs") || pathname?.startsWith("/blogs/")
+                ? scrolled
+                  ? "text-neutral-950 font-medium"
+                  : "text-neutral-50 font-medium"
+                : scrolled
+                  ? "hover:text-neutral-700"
+                  : "hover:text-neutral-100"
+                }`}
+            >
+              บทความ
+            </Link>
+            <Link
               href="/"
               className={`flex-shrink-0 transition-colors ${scrolled ? "hover:text-neutral-700" : "hover:text-neutral-100"}`}
             >
