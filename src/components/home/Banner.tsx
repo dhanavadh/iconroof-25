@@ -7,7 +7,7 @@ const BannerInfoPage = async () => {
   const bannerInfo = await getMockBannerInfoAsync();
 
   return (
-    <div className="w-full py-8 md:py-16 font-sans max-w-7xl mx-auto rounded-xl overflow-hidden">
+    <div className="w-full font-sans max-w-7xl mx-auto rounded-xl overflow-hidden">
       <section className="flex relative min-h-full w-full items-center">
         <div className="flex flex-col z-20 items-center px-6 py-48 text-white w-full max-w-7xl mx-auto gap-4">
           <div className="flex flex-col gap-2 items-center">

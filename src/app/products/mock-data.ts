@@ -15,7 +15,7 @@ const mockProducts: Product[] = [
     name: 'สร้างความเป็นส่วนตัวให้กับบ้าน',
     description: 'บริการลูกค้าการนำเข้าธุรกิจค้าส่งมอบองค์กรการบรรลุเป้าหมายโทรบัญชีงบประมาณ',
     price: 299.50,
-    imageUrl: '/product/1112.webp',
+    imageUrl: '/product/vg-img-1.webp',
     brand: 'ระแนงไวนิล Amigo',
     category: 'ตกแต่งบ้าน',
   },
@@ -61,7 +61,7 @@ const mockBanners: Banner[] = [
     title: 'สร้างความfsadasdasเป็นส่วนตัวให้กับบ้าน',
     subtitle: 'ระแนงไวนิล Amigo',
     description: 'บริการลูกค้าการนำเข้าธุรกิจค้าส่งมอบองค์กรการบรรลุเป้าหมายโทรบัญชีงบประมาณ',
-    imageUrl: '/product/1112.webp',
+    imageUrl: '/product/vg-img-1.webp',
     linkUrl: '/products/vg-vento'
   },
   {
