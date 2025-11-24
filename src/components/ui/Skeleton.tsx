@@ -1,8 +1,6 @@
 import React from "react";
 
-interface SkeletonProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-export function Skeleton({ className, ...props }: SkeletonProps) {
+export function Skeleton({ className, ...props }: React.HTMLAttributes<HTMLDivElement> & { className?: string }) {
   return (
     <div
       className={`animate-pulse rounded-md bg-neutral-200 ${className}`}

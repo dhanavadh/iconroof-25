@@ -1,6 +1,16 @@
 import { MetadataRoute } from 'next'
+import { getAllMockProducts } from './products/mock-data'; // Import the function
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const products = getAllMockProducts(); // Get all mock products
+
+  const productRoutes = products.map((product) => ({
+    url: `https://iconroof.co.th/products/${product.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.7,
+  }));
+
   return [
     {
       url: 'https://iconroof.co.th',
@@ -26,5 +36,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.5,
     },
-  ]
+    ...productRoutes, // Spread the product routes into the sitemap array
+  ];
 }

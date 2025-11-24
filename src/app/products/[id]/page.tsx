@@ -17,7 +17,7 @@ export default async function ProductPageById({ params }: ProductPageProps) {
     return (
       <main className="flex font-sans flex-col items-center justify-start min-h-screen bg-[var(--background)] text-[var(--foreground)] max-w-7xl mx-auto pt-16 md:pt-20">
         <h1 className="text-3xl font-bold mb-4">Product Not Found</h1>
-        <p>The product with ID '{id}' could not be found.</p>
+        <p>The product with ID &apos;{id}&apos; could not be found.</p>
       </main>
     );
   }
