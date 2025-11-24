@@ -17,7 +17,7 @@ const BrandListPage = async () => {
             <Link href={brand.linkUrl} key={brand.id} className="flex flex-col items-center">
               <Image
                 src={brand.imageUrl}
-                alt={brand.name}
+                alt=""
                 width={144}
                 height={144}
                 className="mb-4 w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 object-cover rounded-md flex-shrink-0"
