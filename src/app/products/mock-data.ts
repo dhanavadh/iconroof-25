@@ -1,4 +1,4 @@
-import { Product, Banner, Brand, BannerInfo, FAQItem } from '@/lib/types';
+import { Product, Banner, Brand, BannerInfo, FAQItem, NewsArticle } from '@/lib/types';
 
 const mockProducts: Product[] = [
   {
