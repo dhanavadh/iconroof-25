@@ -1,9 +1,10 @@
+import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { getMockBrands } from '@/app/products/mock-data'
+import { getMockBrandsAsync } from '@/app/products/mock-data'
 
-const BrandListPage = () => {
-  const brands = getMockBrands();
+const BrandListPage = async () => {
+  const brands = await getMockBrandsAsync();
 
   return (
     <div className='w-full py-8 md:py-16 max-w-7xl mx-auto'>

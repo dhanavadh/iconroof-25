@@ -1,8 +1,9 @@
-import { getMockProduct, getMockBanner } from '@/app/products/mock-data';
+import { getMockProduct } from '@/app/products/mock-data';
 import Image from 'next/image';
-import ProductBanner from '@/components/products/ProductBanner';
 import Menutab from '@/components/home/Menutab';
-import { Banner } from '@/lib/types';
+import { Suspense } from 'react';
+import ProductBannerContainer from '@/components/products/ProductBannerContainer';
+import ProductBannerSkeleton from '@/components/loaders/ProductBannerSkeleton';
 
 type ProductPageProps = {
   params: Promise<{ id: string }>;
@@ -11,7 +12,6 @@ type ProductPageProps = {
 export default async function ProductPageById({ params }: ProductPageProps) {
   const { id } = await params;
   const product = getMockProduct(id);
-  const bannerData = getMockBanner(id);
 
   if (!product) {
     return (
@@ -24,7 +24,9 @@ export default async function ProductPageById({ params }: ProductPageProps) {
 
   return (
     <>
-      {bannerData && <ProductBanner banner={bannerData} />}
+      <Suspense fallback={<ProductBannerSkeleton />}>
+        <ProductBannerContainer id={id} />
+      </Suspense>
       <Menutab />
       <main className="flex font-sans flex-col items-center justify-start min-h-screen bg-[var(--background)] text-[var(--foreground)] max-w-7xl mx-auto pt-16 md:pt-20">
         <div className="w-full p-4 md:p-8 bg-white shadow-lg rounded-lg">

@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { getMockBannerInfo } from "@/app/products/mock-data";
+import { getMockBannerInfoAsync } from "@/app/products/mock-data";
 
-const BannerInfoPage = () => {
-  const bannerInfo = getMockBannerInfo();
+const BannerInfoPage = async () => {
+  const bannerInfo = await getMockBannerInfoAsync();
 
   return (
     <div className="w-full py-8 md:py-16 font-sans max-w-7xl mx-auto rounded-xl overflow-hidden">

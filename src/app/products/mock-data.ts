@@ -110,6 +110,11 @@ export function getMockProduct(id: string): Product | undefined {
   return mockProducts.find(product => product.id === id);
 }
 
+export async function getMockProductAsync(id: string): Promise<Product | undefined> {
+  await new Promise(resolve => setTimeout(resolve, 1500));
+  return mockProducts.find(product => product.id === id);
+}
+
 export function getAllMockProducts(): Product[] {
   return mockProducts;
 }
@@ -118,10 +123,25 @@ export function getMockBanner(id: string): Banner | undefined {
   return mockBanners.find(banner => banner.id === id);
 }
 
+export async function getMockBannerAsync(id: string): Promise<Banner | undefined> {
+  await new Promise(resolve => setTimeout(resolve, 1500));
+  return mockBanners.find(banner => banner.id === id);
+}
+
 export function getMockBrands(): Brand[] {
   return mockBrands;
 }
 
+export async function getMockBrandsAsync(): Promise<Brand[]> {
+  await new Promise(resolve => setTimeout(resolve, 2000));
+  return mockBrands;
+}
+
 export function getMockBannerInfo(): BannerInfo {
+  return mockBannerInfos[0];
+}
+
+export async function getMockBannerInfoAsync(): Promise<BannerInfo> {
+  await new Promise(resolve => setTimeout(resolve, 2000));
   return mockBannerInfos[0];
 }

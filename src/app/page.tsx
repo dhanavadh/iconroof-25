@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, MessageCircleQuestion } from "lucide-react";
@@ -8,6 +9,8 @@ import ProductInfoPage from "@/components/home/ProductInfo";
 import LatestArticlePage from "@/components/home/Article";
 import BannerInfoPage from "@/components/home/Banner";
 import InformationComp from "@/components/home/InformationComp";
+import BrandListSkeleton from "@/components/loaders/BrandListSkeleton";
+import BannerInfoSkeleton from "@/components/loaders/BannerInfoSkeleton";
 
 export default function Home() {
   const structuredData = {
@@ -84,12 +87,17 @@ export default function Home() {
 
           <ProductInfoPage />
 
-          <BrandListPage />
+          <Suspense fallback={<BrandListSkeleton />}>
+            <BrandListPage />
+          </Suspense>
 
           <TestimonialSlider />
 
           <LatestArticlePage />
-          <BannerInfoPage />
+          
+          <Suspense fallback={<BannerInfoSkeleton />}>
+            <BannerInfoPage />
+          </Suspense>
 
           <InformationComp />
         </div>

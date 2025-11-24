@@ -1,18 +1,20 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import ProductBanner from '@/components/products/ProductBanner';
-import { getMockBanner, getAllMockProducts } from '@/app/products/mock-data';
+import ProductBannerContainer from '@/components/products/ProductBannerContainer';
+import ProductBannerSkeleton from '@/components/loaders/ProductBannerSkeleton';
+import { getAllMockProducts } from '@/app/products/mock-data';
 import Menutab from "@/components/home/Menutab";
 
 const ProductPage = () => {
     // Use the first product's banner
     const firstProduct = getAllMockProducts()[0];
-    const bannerData = firstProduct ? getMockBanner(firstProduct.id) : undefined;
 
     return (
         <>
-            {bannerData && <ProductBanner banner={bannerData} />}
+             <Suspense fallback={<ProductBannerSkeleton />}>
+                {firstProduct && <ProductBannerContainer id={firstProduct.id} />}
+            </Suspense>
             <Menutab />
             <div className="font-sans flex flex-col max-w-7xl mx-auto ">
                 <span
