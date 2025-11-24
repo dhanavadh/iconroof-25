@@ -3,7 +3,6 @@ export interface Product {
   name: string;
   description: string;
   price: number;
-  logo: string;
   imageUrl: string;
   brand: string;
   category: string;
@@ -18,3 +17,20 @@ export interface Banner {
   imageUrl: string;
   linkUrl: string;
 }
+
+export interface Brand {
+  id: string;
+  name: string;
+  imageUrl: string;
+  linkUrl: string;
+}
+
+export interface BannerInfo {
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  linkUrl: string;
+  linkText: string;
+}
+

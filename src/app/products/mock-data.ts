@@ -1,4 +1,4 @@
-import { Product, Banner } from '@/lib/types';
+import { Product, Banner, Brand, BannerInfo } from '@/lib/types';
 
 const mockProducts: Product[] = [
   {
@@ -74,6 +74,38 @@ const mockBanners: Banner[] = [
   },
 ];
 
+const mockBrands: Brand[] = [
+  {
+    id: 'amigo',
+    name: 'Amigo',
+    imageUrl: '/brand/amigo.jpg',
+    linkUrl: '/brands/amigo'
+  },
+  {
+    id: 'vg_cnp',
+    name: 'VG CNP',
+    imageUrl: '/brand/vg_cnp.jpg',
+    linkUrl: '/brands/vg_cnp'
+  },
+  {
+    id: 'scg_home',
+    name: 'SCG Home',
+    imageUrl: '/brand/scg_home.jpg',
+    linkUrl: '/brands/scg_home'
+  },
+];
+
+const mockBannerInfos: BannerInfo[] = [
+  {
+    id: 'info1',
+    title: 'สอบถาม ปรึกษา ฟรี',
+    description: 'กรุณากรอกข้อมูลให้ครบถ้วน',
+    imageUrl: '/1101.webp',
+    linkUrl: 'https://lin.ee/8BsKFek',
+    linkText: 'ติดต่อผ่านไลน์'
+  }
+];
+
 export function getMockProduct(id: string): Product | undefined {
   return mockProducts.find(product => product.id === id);
 }
@@ -84,4 +116,12 @@ export function getAllMockProducts(): Product[] {
 
 export function getMockBanner(id: string): Banner | undefined {
   return mockBanners.find(banner => banner.id === id);
+}
+
+export function getMockBrands(): Brand[] {
+  return mockBrands;
+}
+
+export function getMockBannerInfo(): BannerInfo {
+  return mockBannerInfos[0];
 }
