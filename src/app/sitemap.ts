@@ -7,8 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const productRoutes = products.map((product) => ({
     url: `https://iconroof.co.th/products/${product.id}`,
     lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: 0.7,
+    changeFrequency: 'weekly' as const,
   }));
 
   return [
