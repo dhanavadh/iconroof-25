@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Menutab from "@/components/home/Menutab";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
+import { trackQualifyLead } from "@/lib/gtag";
 
 const NavbarDefault = () => {
   const pathname = usePathname();
@@ -66,6 +69,7 @@ const NavbarDefault = () => {
           href="https://lin.ee/8BsKFek"
           target="_blank"
           className="flex whitespace-nowrap shrink-0 items-center bg-white border border-neutral-100 py-1 px-3 text-neutral-700 rounded-full text-sm font-semibold shadow-sm"
+          onClick={() => trackQualifyLead('line_navbar')}
         >
           ซื้อสินค้า
         </Link>

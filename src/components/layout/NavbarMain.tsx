@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 import { MENU_ITEMS } from "@/lib/constants";
+import { trackQualifyLead } from "@/lib/gtag";
 
 const NavbarMain = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -74,6 +75,7 @@ const NavbarMain = () => {
             href="https://lin.ee/8BsKFek"
             target="_blank"
             className="flex items-center bg-white border whitespace-nowrap shrink-0 border-neutral-100 py-1 px-3 text-neutral-700 rounded-full text-sm font-semibold shadow-sm"
+            onClick={() => trackQualifyLead('line_navbar')}
           >
             ซื้อสินค้า
           </Link>

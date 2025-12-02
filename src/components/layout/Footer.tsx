@@ -1,6 +1,9 @@
+'use client';
+
 import Link from "next/link";
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
+import { trackQualifyLead, trackPhoneClick } from "@/lib/gtag";
 
 const Footer = () => {
   return (
@@ -62,7 +65,11 @@ const Footer = () => {
         <section className="flex flex-col gap-2">
           <p className="">ช่องทางการติดต่อ</p>
           <div className="flex flex-col gap-1.5">
-            <Link href="+" target="_blank" className="text-neutral-500 text-sm">
+            <Link
+              href="tel:0891543355"
+              className="text-neutral-500 text-sm"
+              onClick={() => trackPhoneClick()}
+            >
               โทร. 089-154-3355
               <ArrowUpRight className="inline-block ml-1 h-4 w-4" />
             </Link>
@@ -70,11 +77,16 @@ const Footer = () => {
               href="https://lin.ee/8BsKFek"
               target="_blank"
               className="text-neutral-500 text-sm"
+              onClick={() => trackQualifyLead('line_footer')}
             >
               Line @PLK2013
               <ArrowUpRight className="inline-block ml-1 h-4 w-4" />
             </Link>
-            <Link href="/" target="_blank" className="text-neutral-500 text-sm">
+            <Link
+              href="https://www.facebook.com/PLK2013/"
+              target="_blank"
+              className="text-neutral-500 text-sm"
+            >
               Facebook แผ่นหลังคาการช่าง
               <ArrowUpRight className="inline-block ml-1 h-4 w-4" />
             </Link>
