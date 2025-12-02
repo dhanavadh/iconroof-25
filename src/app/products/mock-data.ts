@@ -26,7 +26,7 @@ const mockProducts: Product[] = [
     name: 'VG Vento',
     description: 'ออกแบบเพื่อสภาพอากาศของประเทศไทยโดยเฉพาะ',
     price: 299.5,
-    imageUrl: '/product/test-1.jpg',
+    imageUrl: '/product/test-1.webp',
     brand: 'VG Vento',
     category: 'ระแนงไวนิล'
   },
@@ -112,19 +112,19 @@ const mockBrands: Brand[] = [
   {
     id: 'amigo',
     name: 'Amigo',
-    imageUrl: '/brand/amigo.jpg',
+    imageUrl: '/brand/amigo.webp',
     linkUrl: '/products/amigo'
   },
   {
     id: 'vg-vento',
     name: 'VG Vento',
-    imageUrl: '/brand/vg_cnp.jpg',
+    imageUrl: '/brand/vg_cnp.webp',
     linkUrl: '/products/vg-vento'
   },
   {
     id: 'scg_home',
     name: 'SCG Home',
-    imageUrl: '/brand/scg_home.jpg',
+    imageUrl: '/brand/scg_home.webp',
     linkUrl: '/products/scg_home'
   },
   {

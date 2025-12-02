@@ -97,7 +97,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="th" className="overscroll-none">
-
+      <head>
+        {/* Preconnect to external origins for performance */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://static.cloudflareinsights.com" />
+        <link rel="preconnect" href="https://tvss01.iconroof.co.th" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+      </head>
       <GoogleAnalytics gaId="G-M74LW8G72T" />
       <GoogleTagManager gtmId="GTM-TKH6XPJN" />
       <body
