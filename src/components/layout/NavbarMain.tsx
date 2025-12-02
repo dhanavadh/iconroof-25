@@ -5,12 +5,17 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
+import { MENU_ITEMS } from "@/lib/constants";
 
 const NavbarMain = () => {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const isActive = (path: string) => {
-    return pathname === path;
+
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname === href || pathname?.startsWith(`${href}/`);
   };
 
   useEffect(() => {
@@ -21,6 +26,16 @@ const NavbarMain = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const getLinkClassName = (href: string, external?: boolean) => {
+    const active = !external && isActive(href);
+    if (active) {
+      return scrolled
+        ? "text-neutral-950 font-medium"
+        : "text-neutral-50 font-medium";
+    }
+    return scrolled ? "hover:text-neutral-700" : "hover:text-neutral-100";
+  };
 
   return (
     <>
@@ -41,73 +56,18 @@ const NavbarMain = () => {
           <div
             className={`md:flex gap-6 transition-colors hidden ${scrolled ? "text-neutral-500" : "text-neutral-200"}`}
           >
-            <Link
-              href="/"
-              className={`flex-shrink-0 transition-colors ${isActive("/")
-                ? scrolled
-                  ? "text-neutral-950 font-medium"
-                  : "text-neutral-50 font-medium"
-                : scrolled
-                  ? "hover:text-neutral-700"
-                  : "hover:text-neutral-100"
-                }`}
-            >
-              หน้าแรก
-            </Link>
-            <Link
-              href="/products"
-              className={`flex-shrink-0 transition-colors ${isActive("/products") || pathname?.startsWith("/products/")
-                ? scrolled
-                  ? "text-neutral-950 font-medium"
-                  : "text-neutral-50 font-medium"
-                : scrolled
-                  ? "hover:text-neutral-700"
-                  : "hover:text-neutral-100"
-                }`}
-            >
-              สินค้า
-            </Link>
-            <Link
-              href="/preview"
-              className={`flex-shrink-0 transition-colors ${isActive("/preview")
-                ? scrolled
-                  ? "text-neutral-950 font-medium"
-                  : "text-neutral-50 font-medium"
-                : scrolled
-                  ? "hover:text-neutral-700"
-                  : "hover:text-neutral-100"
-                }`}
-            >
-              ผลงาน
-            </Link>
-            <Link
-              href="/blogs"
-              className={`flex-shrink-0 transition-colors ${isActive("/blogs") || pathname?.startsWith("/blogs/")
-                ? scrolled
-                  ? "text-neutral-950 font-medium"
-                  : "text-neutral-50 font-medium"
-                : scrolled
-                  ? "hover:text-neutral-700"
-                  : "hover:text-neutral-100"
-                }`}
-            >
-              บทความ
-            </Link>
-            <Link
-              href="/"
-              className={`flex-shrink-0 transition-colors ${scrolled ? "hover:text-neutral-700" : "hover:text-neutral-100"}`}
-            >
-              ช่างทำระแนง
-            </Link>
-            <Link
-              href="https://www.xn--42cf7cl0c9a5bk1kzc.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`flex-shrink-0 transition-colors ${scrolled ? "hover:text-neutral-700" : "hover:text-neutral-100"}`}
-            >
-              แผ่นหลังคา
-              <ArrowUpRight className="inline-block ml-1 h-4 w-4" />
-            </Link>
+            {MENU_ITEMS.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                className={`flex-shrink-0 transition-colors ${getLinkClassName(item.href, item.external)}`}
+              >
+                {item.label}
+                {item.external && <ArrowUpRight className="inline-block ml-1 h-4 w-4" />}
+              </Link>
+            ))}
           </div>
 
           <Link

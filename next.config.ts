@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  assetPrefix: 'https://beta.iconroof.co.th',
   async headers() {
     return [
       {

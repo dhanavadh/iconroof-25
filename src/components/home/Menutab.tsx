@@ -4,21 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
-
-interface MenuItem {
-  label: string;
-  href: string;
-  external?: boolean;
-}
-
-const menuItems: MenuItem[] = [
-  { label: "หน้าแรก", href: "/" },
-  { label: "สินค้า", href: "/products" },
-  { label: "ผลงานติดตั้ง", href: "/preview" },
-  { label: "บทความ", href: "/blogs" },
-  { label: "ช่างทำระแนง", href: "#" }, // Adjusted to '#' as per original, or update if needed
-  { label: "แผ่นหลังคา", href: "https://www.xn--42cf7cl0c9a5bk1kzc.com/", external: true },
-];
+import { MENU_ITEMS } from "@/lib/constants";
 
 const Menutab = () => {
   const pathname = usePathname();
@@ -37,7 +23,7 @@ const Menutab = () => {
           className="flex font-medium items-center gap-6 h-12 overflow-x-auto no-scrollbar text-neutral-500"
           id="menu-tab"
         >
-          {menuItems.map((item) => (
+          {MENU_ITEMS.map((item) => (
             <Link
               key={item.label}
               href={item.href}
