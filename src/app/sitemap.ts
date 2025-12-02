@@ -1,40 +1,61 @@
 import { MetadataRoute } from 'next'
-import { getAllMockProducts } from './products/mock-data'; // Import the function
+import { getAllMockProducts, getMockNewsArticlesAsync } from './products/mock-data';
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const products = getAllMockProducts(); // Get all mock products
+const BASE_URL = 'https://iconroof.co.th';
 
-  const productRoutes = products.map((product) => ({
-    url: `https://iconroof.co.th/products/${product.id}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-  }));
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const products = getAllMockProducts();
+  const articles = await getMockNewsArticlesAsync();
 
-  return [
+  // Static pages with their priorities
+  const staticPages: MetadataRoute.Sitemap = [
     {
-      url: 'https://iconroof.co.th',
+      url: BASE_URL,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'daily',
       priority: 1,
     },
     {
-      url: 'https://iconroof.co.th/products',
+      url: `${BASE_URL}/products`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/services`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/blogs`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
-      url: 'https://iconroof.co.th/about',
+      url: `${BASE_URL}/preview`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
+      changeFrequency: 'weekly',
+      priority: 0.7,
     },
-    {
-      url: 'https://iconroof.co.th/contact',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    ...productRoutes, // Spread the product routes into the sitemap array
   ];
+
+  // Dynamic product pages
+  const productRoutes: MetadataRoute.Sitemap = products.map((product) => ({
+    url: `${BASE_URL}/products/${product.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }));
+
+  // Dynamic blog/article pages
+  const articleRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
+    url: `${BASE_URL}/blogs/${article.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...productRoutes, ...articleRoutes];
 }

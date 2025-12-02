@@ -7,6 +7,26 @@ import { getAllMockProductsAsync } from '@/app/products/mock-data';
 import Menutab from "@/components/home/Menutab";
 import NewsGrid from "@/components/home/NewsGrid";
 import { NewsArticle } from "@/lib/types";
+import type { Metadata } from "next";
+
+const BASE_URL = 'https://iconroof.co.th';
+
+export const metadata: Metadata = {
+  title: "สินค้าระแนงไวนิล Amigo, VG Vento, SCG | Iconroof",
+  description: "จำหน่ายระแนงไวนิล ระแนงบังตา ระแนงชิด ระแนงเว้นร่อง หลากหลายแบรนด์ Amigo VG Vento SCG ราคาโรงงาน รับประกัน 10 ปี",
+  keywords: ["ระแนงไวนิล", "Amigo", "VG Vento", "SCG", "ระแนงบังตา", "Iconroof"],
+  openGraph: {
+    title: "สินค้าระแนงไวนิล | Iconroof",
+    description: "จำหน่ายระแนงไวนิล หลากหลายแบรนด์ ราคาโรงงาน รับประกัน 10 ปี",
+    url: `${BASE_URL}/products`,
+    siteName: "Iconroof",
+    locale: "th_TH",
+    type: "website",
+  },
+  alternates: {
+    canonical: `${BASE_URL}/products`,
+  },
+};
 
 const ProductPage = async () => {
     // Fetch all products

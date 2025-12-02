@@ -4,6 +4,26 @@ import ProductBanner from "@/components/products/ProductBanner";
 import Slider from "@/components/home/Slider";
 import ProductBannerSkeleton from "@/components/loaders/ProductBannerSkeleton";
 import { getMockBannerAsync, getMockSliderSectionAsync } from "@/app/products/mock-data";
+import type { Metadata } from "next";
+
+const BASE_URL = 'https://iconroof.co.th';
+
+export const metadata: Metadata = {
+  title: "บทความและสาระน่ารู้เกี่ยวกับระแนงไวนิล | Iconroof",
+  description: "รวมบทความเกี่ยวกับบ้าน การตกแต่ง วัสดุก่อสร้าง ระแนงไวนิล เทคนิคการเลือกวัสดุหลังคา และสาระน่ารู้จาก Iconroof",
+  keywords: ["บทความระแนง", "ความรู้เรื่องบ้าน", "ระแนงไวนิล", "วัสดุก่อสร้าง", "Iconroof"],
+  openGraph: {
+    title: "บทความและสาระน่ารู้ | Iconroof",
+    description: "รวมบทความเกี่ยวกับบ้าน การตกแต่ง วัสดุก่อสร้าง และระแนงไวนิล",
+    url: `${BASE_URL}/blogs`,
+    siteName: "Iconroof",
+    locale: "th_TH",
+    type: "website",
+  },
+  alternates: {
+    canonical: `${BASE_URL}/blogs`,
+  },
+};
 
 async function BlogsBanner() {
   const banner = await getMockBannerAsync("blogs-banner");

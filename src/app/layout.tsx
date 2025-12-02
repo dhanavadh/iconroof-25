@@ -15,19 +15,50 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const BASE_URL = 'https://iconroof.co.th';
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
-  title: "จำหน่ายอุปกรณ์ระแนงไวนิล | ไม้ระแนงเฌอร่า-ระแนงไม้เทียม – Iconroof",
+  title: {
+    default: "จำหน่ายอุปกรณ์ระแนงไวนิล | ไม้ระแนงเฌอร่า-ระแนงไม้เทียม – Iconroof",
+    template: "%s | Iconroof",
+  },
   description:
     "ไอคอนรูฟ จำหน่ายและติดตั้งระแนงบังตาไวนิล AMIGO ระแนงชิด ระแนงเว้นร่อง ระแนงบานเกล็ด โดยไอคอนรูฟ ขายปลีก-ส่ง ราคาโรงงาน ทันสมัย แข็งแรง สวยงาม ระแนงบังตาไวนิล รับประกัน 10 ปี อบสีด้วย พาวเดอร์ โค้ท ตั้งแต่ 08.00-17.30 น. เปิดบริการวันจันทร์-เสาร์ บริการ: รับติดตั้งระแนงไวนิล, เปิดบริการ จันทร์-ศุกร์, ตั้งแต่ 08.00-17.30 น.",
+  keywords: [
+    "ระแนงไวนิล",
+    "ระแนงบังตา",
+    "ไม้ระแนง",
+    "ระแนงเฌอร่า",
+    "ระแนงไม้เทียม",
+    "Amigo",
+    "VG Vento",
+    "SCG",
+    "ติดตั้งระแนง",
+    "Iconroof",
+    "ไอคอนรูฟ",
+  ],
+  authors: [{ name: "Iconroof" }],
+  creator: "Iconroof",
+  publisher: "Iconroof",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: BASE_URL,
+  },
   openGraph: {
     title: "ไอคอนรูฟ จำหน่ายอุปกรณ์ระแนงไวนิล | ไม้ระแนงเฌอร่า-ระแนงไม้เทียม – Iconroof",
     description:
       "ไอคอนรูฟ บริการจำหน่ายและติดตั้งระแนงบังตาไวนิล AMIGO ระแนงชิด ระแนงเว้นร่อง ระแนงบานเกล็ด โดยไอคอนรูฟ ขายปลีก-ส่ง ราคาโรงงาน ทันสมัย แข็งแรง สวยงาม ระแนงบังตาไวนิล รับประกัน 10 ปี อบสีด้วย พาวเดอร์ โค้ท ตั้งแต่ 08.00-17.30 น. เปิดบริการวันจันทร์-เสาร์ บริการ: รับติดตั้งระแนงไวนิล, เปิดบริการ จันทร์-ศุกร์, ตั้งแต่ 08.00-17.30 น.",
-    url: "https://beta.iconroof.co.th/",
+    url: BASE_URL,
     siteName: "Iconroof",
     images: [
       {
@@ -39,6 +70,23 @@ export const metadata: Metadata = {
     ],
     locale: "th_TH",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ไอคอนรูฟ จำหน่ายอุปกรณ์ระแนงไวนิล | Iconroof",
+    description: "จำหน่ายและติดตั้งระแนงบังตาไวนิล AMIGO ราคาโรงงาน รับประกัน 10 ปี",
+    images: ["https://tvss01.iconroof.co.th/e6c6f6e8-e73e-40b1-9f05-5436e5f99137/asset/og-img.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

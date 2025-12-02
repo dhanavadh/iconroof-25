@@ -4,6 +4,26 @@ import ProductBanner from "@/components/products/ProductBanner";
 import Slider from "@/components/home/Slider";
 import ProductBannerSkeleton from "@/components/loaders/ProductBannerSkeleton";
 import { getMockBannerAsync, getMockSliderSectionAsync } from "@/app/products/mock-data";
+import type { Metadata } from "next";
+
+const BASE_URL = 'https://iconroof.co.th';
+
+export const metadata: Metadata = {
+  title: "บริการติดตั้งระแนงไวนิล ช่างทำระแนงมืออาชีพ | Iconroof",
+  description: "บริการติดตั้งระแนงไวนิลครบวงจร โดยทีมช่างผู้ชำนาญการ ประสบการณ์ยาวนาน งานคุณภาพ รับประกันผลงาน ติดต่อ Iconroof",
+  keywords: ["ติดตั้งระแนง", "ช่างทำระแนง", "บริการติดตั้ง", "ระแนงไวนิล", "Iconroof"],
+  openGraph: {
+    title: "บริการติดตั้งระแนงไวนิล | Iconroof",
+    description: "บริการติดตั้งระแนงไวนิลครบวงจร โดยทีมช่างผู้ชำนาญการ",
+    url: `${BASE_URL}/services`,
+    siteName: "Iconroof",
+    locale: "th_TH",
+    type: "website",
+  },
+  alternates: {
+    canonical: `${BASE_URL}/services`,
+  },
+};
 
 async function ServicesBanner() {
   const banner = await getMockBannerAsync("services-banner");

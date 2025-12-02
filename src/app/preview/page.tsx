@@ -4,6 +4,26 @@ import ProductBanner from "@/components/products/ProductBanner";
 import Slider from "@/components/home/Slider";
 import ProductBannerSkeleton from "@/components/loaders/ProductBannerSkeleton";
 import { getMockBannerAsync, getMockSliderSectionAsync } from "@/app/products/mock-data";
+import type { Metadata } from "next";
+
+const BASE_URL = 'https://iconroof.co.th';
+
+export const metadata: Metadata = {
+  title: "ตัวอย่างผลงานติดตั้งระแนงไวนิล Gallery | Iconroof",
+  description: "ชมภาพผลงานการติดตั้งระแนงไวนิลจริงจากลูกค้าของ Iconroof ตัวอย่างงานติดตั้งคุณภาพ รีวิวจากลูกค้าจริง",
+  keywords: ["ผลงานติดตั้ง", "ตัวอย่างระแนง", "รีวิวลูกค้า", "ระแนงไวนิล", "Iconroof"],
+  openGraph: {
+    title: "ตัวอย่างผลงานติดตั้ง | Iconroof",
+    description: "ชมภาพผลงานการติดตั้งระแนงไวนิลจริงจากลูกค้าของ Iconroof",
+    url: `${BASE_URL}/preview`,
+    siteName: "Iconroof",
+    locale: "th_TH",
+    type: "website",
+  },
+  alternates: {
+    canonical: `${BASE_URL}/preview`,
+  },
+};
 
 async function PreviewBanner() {
   const banner = await getMockBannerAsync("preview-banner");

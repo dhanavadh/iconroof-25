@@ -1,13 +1,72 @@
-import { getMockProductAsync } from '@/app/products/mock-data';
+import { getMockProductAsync, getAllMockProducts } from '@/app/products/mock-data';
 import Image from 'next/image';
 import Menutab from '@/components/home/Menutab';
 import { Suspense } from 'react';
 import ProductBannerContainer from '@/components/products/ProductBannerContainer';
 import ProductBannerSkeleton from '@/components/loaders/ProductBannerSkeleton';
+import type { Metadata } from 'next';
+
+const BASE_URL = 'https://iconroof.co.th';
 
 type ProductPageProps = {
   params: Promise<{ id: string }>;
 };
+
+// Generate static params for all products
+export async function generateStaticParams() {
+  const products = getAllMockProducts();
+  return products.map((product) => ({
+    id: product.id,
+  }));
+}
+
+// Generate dynamic metadata for each product
+export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const product = await getMockProductAsync(id);
+
+  if (!product) {
+    return {
+      title: 'สินค้าไม่พบ | Iconroof',
+      description: 'ไม่พบสินค้าที่คุณกำลังค้นหา',
+    };
+  }
+
+  const title = `${product.name} - ${product.category} | Iconroof`;
+  const description = `${product.description} - ${product.brand} ราคา ฿${product.price.toFixed(2)} จาก Iconroof`;
+
+  return {
+    title,
+    description,
+    keywords: [product.name, product.brand, product.category, 'ระแนงไวนิล', 'Iconroof'],
+    openGraph: {
+      title,
+      description,
+      url: `${BASE_URL}/products/${product.id}`,
+      siteName: 'Iconroof',
+      images: [
+        {
+          url: product.imageUrl.startsWith('http')
+            ? product.imageUrl
+            : `${BASE_URL}${product.imageUrl}`,
+          width: 800,
+          height: 600,
+          alt: product.name,
+        },
+      ],
+      locale: 'th_TH',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
+    alternates: {
+      canonical: `${BASE_URL}/products/${product.id}`,
+    },
+  };
+}
 
 export default async function ProductPageById({ params }: ProductPageProps) {
   const { id } = await params;
