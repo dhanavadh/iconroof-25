@@ -15,6 +15,7 @@ const Footer = () => {
           บางบัวทอง อำเภอบางบัวทอง นนทบุรี 11110
         </p>
         <p className="text-sm w-5/6 text-neutral-500">089-154-3355</p>
+        <a href="https://rinkai.co/" className="text-sm w-5/6 text-neutral-500 hover:underline" target="_blank" rel="noopener noreferrer">Made by Rinkai.co</a>
       </section>
       <div className="flex flex-col lg:flex-row items-start gap-6">
         <section className="flex flex-col gap-2">

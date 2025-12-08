@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     "ไอคอนรูฟ",
   ],
   authors: [{ name: "Iconroof" }],
-  creator: "Iconroof",
+  creator: "Rinkai.co",
   publisher: "Iconroof",
   formatDetection: {
     email: false,
